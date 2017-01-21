@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Engine</name>
+    </assembly>
+    <members>
+        <member name="T:Engine.Classes.Eng_Point2D">
+            <summary>
+            This class simulates a point in 2D space.
+            </summary>
+        </member>
+        <member name="T:Engine.Calculator">
+            <summary>
+            This class contains static methods to perform the math calculations.
+            </summary>
+        </member>
+        <member name="M:Engine.Calculator.SegmentLength(Engine.Classes.Eng_Point2D,Engine.Classes.Eng_Point2D)">
+            <summary>
+            Calculates the length of a line segment between two 2D points.
+            </summary>
+            <param name="a">Eng_Point2D: a 2D point A</param>
+            <param name="b">Eng_Point2D: a 2D point B</param>
+            <returns>Double: length of the line segment.</returns>
+        </member>
+        <member name="M:Engine.Calculator.MidPoint(Engine.Classes.Eng_Point2D,Engine.Classes.Eng_Point2D)">
+            <summary>
+            Calculates the midpoint of the line segment between two 2D points.
+            </summary>
+            <param name="a">Eng_Point2D: a 2D point A</param>
+            <param name="b">Eng_Point2D: a 2D point B</param>
+            <returns>Eng_Point2D: midpoint on the line segemnt</returns>
+        </member>
+        <member name="T:Engine.Validator">
+            <summary>
+            This class contains some basic validation methods.
+            </summary>
+        </member>
+        <member name="M:Engine.Validator.IsDouble(System.String)">
+            <summary>
+            Validates the the input string can be converted to a Double
+            </summary>
+            <param name="sArg">The text to be validated.</param>
+            <returns>True: if the string can be parsed to a Double, False if not.</returns>
+        </member>
+        <member name="M:Engine.Validator.IsFloat(System.String)">
+            <summary>
+            Validates the the input string can be converted to a Float
+            </summary>
+            <param name="sArg">The text to be validated.</param>
+            <returns>True: if the string can be parsed to a Float, False if not.</returns>
+        </member>
+        <member name="M:Engine.Validator.IsInteger(System.String)">
+            <summary>
+            Validates the the input string can be converted to an Integer
+            </summary>
+            <param name="sArg">The text to be validated.</param>
+            <returns>True: if the string can be parsed to an Integer, False if not.</returns>
+        </member>
+        <member name="M:Engine.Validator.ValidateTheta(System.Double)">
+            <summary>
+            Validates that the input angle, in degrees, is between 0 and 90.
+            The values of 0 and 90 are invalid, as no triangle can have an
+            angle on 0 degrees, and not right triangle can have two 90 degree
+            angles.
+            </summary>
+            <param name="angle">The input angle in degrees (a double value)</param>
+            <returns>True: if the angle is between 0 and 90, False if not</returns>
+        </member>
+        <member name="M:Engine.Validator.ValidateIncline(System.Double)">
+            <summary>
+            Validates that the input angle, in degrees, is between 0 and 90.
+            The values of 0 and 90 are invalid, as no triangle can have an
+            angle on 0 degrees, and not right triangle can have two 90 degree
+            angles. 
+            </summary>
+            <param name="angle">The input angle in degrees (a double value)</param>
+            <returns>True: if the angle is between 0 and 90, False if not</returns>
+        </member>
+        <member name="M:Engine.Validator.ValidateDirection(System.Double)">
+            <summary>
+            This validates that the angle is a positive angle from 0
+            degrees to less than 360 degrees.
+            </summary>
+            <param name="angle">The input angle to be validated (a double value)</param>
+            <returns>True: if the angle is from 0 to less than 360, False if not</returns>
+        </member>
+        <member name="M:Engine.Validator.ValidateRotationAngle(System.Double)">
+            <summary>
+            This validates that the angle is a positive angle from 0
+            degrees to less than 360 degrees. 
+            </summary>
+            <param name="angle">The input angle to be validated (a double value)</param>
+            <returns>True: if the angle is from 0 to less than 360, False if not</returns>
+        </member>
+        <member name="M:Engine.Validator.ValidateEuler(System.Double)">
+            <summary>
+            THis validates the Euler angles are not 90 degrees to avoid Gimbal Lock.
+            </summary>
+            <param name="angle">The angle to be validated in degrees (a double value)</param>
+            <returns>True: if the angle is not greater than or equal to the absolute value of 90.</returns>
+        </member>
+    </members>
+</doc>

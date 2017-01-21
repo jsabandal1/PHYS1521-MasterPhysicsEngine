@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Engine.Specs</name>
+    </assembly>
+    <members>
+        <member name="T:Engine.Specs.EngineTester">
+            <summary>
+            This is a test class that uses XUnit testing. Each method below is a sample of
+            how the testing can be accomplished.
+            </summary>
+        </member>
+        <member name="M:Engine.Specs.EngineTester.TestSegmentLength(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Tests the method in the Calculator class that calculates the length of
+            a line segment between two Eng_Point2D points A and B.
+            Note that there are two sets of data, one will be from the Instructor, which
+            will give you a passed test if your method works. The other set of data is your
+            student data and will pass if the student has calculated the expected answer
+            correctly.
+            </summary>
+            <param name="aX">The x-component of point A</param>
+            <param name="aY">The y-component of point A</param>
+            <param name="bX">The x-component of point B</param>
+            <param name="bY">The y-component of point B</param>
+            <param name="expected">The expected value given the two Eng_Point2D points.</param>
+        </member>
+        <member name="M:Engine.Specs.EngineTester.MidPointData">
+            <summary>
+            This method holds object-based data to be used for the TestMidPoint test method.
+            The TestMidPoint method returns a Eng_Point2D data type theefore this is the means
+            to test this type of method.
+            </summary>
+            <returns>A List of Objects</returns>
+        </member>
+        <member name="M:Engine.Specs.EngineTester.TestMidPoint(Engine.Classes.Eng_Point2D,Engine.Classes.Eng_Point2D,Engine.Classes.Eng_Point2D)">
+            <summary>
+            This test test the calcualtion of the midpoint, as a Eng_Point2D type, between
+            two Eng_Point2D points. The test data for this test comes from "MidPointData".
+            </summary>
+            <param name="givenA">Eng_Point2D: test point A</param>
+            <param name="givenB">Eng_Point2D: test point B</param>
+            <param name="expected">Expected, calculated, midpoint, a Eng_Point2D point, between test points A and B</param>
+        </member>
+    </members>
+</doc>
