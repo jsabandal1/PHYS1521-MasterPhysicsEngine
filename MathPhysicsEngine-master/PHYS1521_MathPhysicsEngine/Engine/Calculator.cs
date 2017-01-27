@@ -275,7 +275,7 @@ namespace Engine
         /// </summary>
         /// <param name="first"></param>
         /// <returns></returns>
-        public static double SurfaceNormalOfA3DVector(Eng_Vector3D first)
+        public static Eng_Vector3D SurfaceNormalOfA3DVector(Eng_Vector3D first)
         {
             double topX = first.x / first.magnitude;
             double middleY = first.y / first.magnitude;
@@ -283,7 +283,7 @@ namespace Engine
 
             Eng_Vector3D surfaceVector = new Eng_Vector3D(topX, middleY, bottomZ);
 
-            return surfaceVector.magnitude;
+            return surfaceVector;
         }
         #endregion
     }

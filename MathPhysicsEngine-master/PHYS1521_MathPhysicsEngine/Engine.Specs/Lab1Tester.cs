@@ -218,7 +218,6 @@ namespace Engine.Specs
             Assert.Equal(expected, result);
         }
 
-        /* IDK what this is
         /// <summary>
         /// test for normalize two vectors
         /// </summary>
@@ -228,14 +227,18 @@ namespace Engine.Specs
         [MemberData("NormalizeVector2DData")]
         public void TestNormailze(Eng_Vector2D givenA, Eng_Vector2D expected)
         {
+            // | a | = sqrt((ax * ax) + (ay * ay) + (az * az))
             // Arrange - get data to do the test
             // This test uses [MemberData]
             // Act - performing the action
-            Eng_Vector2D result = Calculator.SurfaceNormalOfA2DVector(givenA);
+            double magnitude = Math.Round(Math.Sqrt(((givenA.x * givenA.x) + (givenA.y * givenA.y))), 2);
+            double resultX = Math.Round(givenA.x / magnitude, 4);
+            double resultY = Math.Round(givenA.y / magnitude, 4);
+            Eng_Vector2D result = new Eng_Vector2D (resultX, resultY);
             // Assert - did we get back the correct answer
+            Assert.Equal(expected, result);            
 
         }
-        */
 
         /// <summary>
         /// test for solving dot product of two 2D vectors
@@ -287,6 +290,12 @@ namespace Engine.Specs
             Assert.Equal(expected, newResult);
 
         }
+
+
+        /// <summary>
+        /// test data for adding two 3d vectors
+        /// </summary>
+        /// <returns></returns>
         //3D Vectors
         // Static method to set up Object-based test data
         public static IEnumerable<Object[]> AddVector3DData()
@@ -299,9 +308,19 @@ namespace Engine.Specs
         new Eng_Vector3D(9, 13, 3)
             };
             // Student Data
-
+            yield return new Object[]
+            {
+        new Eng_Vector3D(1, 1, 2),
+        new Eng_Vector3D(5, 3, 1),
+        new Eng_Vector3D(6, 4, 3)
+            };
         }
 
+
+        /// <summary>
+        /// test data for normalize 3d vector
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<Object[]> NormalizeVector3DData()
         {
             // Instructor Data
@@ -311,9 +330,18 @@ namespace Engine.Specs
        new Eng_Vector3D(0.4243, 0.5657, 0.7071)
             };
             // Student Data
-
+            yield return new Object[]
+{
+       new Eng_Vector3D(7, 6, 5),
+       new Eng_Vector3D(0.6364, 0.5455, 0.4545)
+};
         }
 
+
+        /// <summary>
+        /// test data for cross product of 3d vectors
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<Object[]> CrossProductData()
         {
             // Instructor Data
@@ -324,9 +352,20 @@ namespace Engine.Specs
         new Eng_Vector3D(-49, 33, 3)
             };
             // Student Data
+            yield return new Object[]
+{
+        new Eng_Vector3D(2, 4, 4),
+        new Eng_Vector3D(1, 6, 5),
+        new Eng_Vector3D(-4, 6, 8)
+};
 
         }
 
+
+        /// <summary>
+        /// surface normal 3d data
+        /// </summary>
+        /// <returns></returns>
         public static IEnumerable<Object[]> SurfaceNormalData()
         {
             // Instructor Data
@@ -340,18 +379,34 @@ namespace Engine.Specs
 
         }
 
+
+        /// <summary>
+        /// test calculation for adding 3d vector
+        /// </summary>
+        /// <param name="givenA"></param>
+        /// <param name="givenB"></param>
+        /// <param name="expected"></param>
         [Theory]
         [MemberData("AddVector3DData")]
         public void TestAddVector(Eng_Vector3D givenA, Eng_Vector3D givenB, Eng_Vector3D expected)
         {
+            //        new Eng_Vector3D(1, 1, 2),
+            //new Eng_Vector3D(5, 3, 1),
+            //new Eng_Vector3D(6, 4, 3)
             // Arrange - get data to do the test
             // This test uses [MemberData]
             // Act - performing the action
+            Eng_Vector3D result = Calculator.AddTwo3DVectors(givenA, givenB);
 
             // Assert - did we get back the correct answer
-
+            Assert.Equal(expected, result);
         }
 
+        /// <summary>
+        /// test calculation for testnormalize 3d vector
+        /// </summary>
+        /// <param name="givenA"></param>
+        /// <param name="expected"></param>
         [Theory]
         [MemberData("NormalizeVector3DData")]
         public void TestNormailze(Eng_Vector3D givenA, Eng_Vector3D expected)
@@ -359,41 +414,74 @@ namespace Engine.Specs
             // Arrange - get data to do the test
             // This test uses [MemberData]
             // Act - performing the action
-
+            Eng_Vector3D result = Calculator.SurfaceNormalOfA3DVector(givenA);
             // Assert - did we get back the correct answer
-
+            Assert.Equal(expected, result);
         }
 
+
+        /// <summary>
+        /// test calculation for dot product of two 3D vectors
+        /// </summary>
+        /// <param name="givenAx"></param>
+        /// <param name="givenAy"></param>
+        /// <param name="givenAz"></param>
+        /// <param name="givenBx"></param>
+        /// <param name="givenBy"></param>
+        /// <param name="givenBz"></param>
+        /// <param name="expected"></param>
         [Theory]
         // Instructor Data
         [InlineData(3, 4, 5, 6, 9, -1, 49)]
         // Student Data
-
+        [InlineData(5, 2, 1, 6, 4, 8, 46)]
         public void TestDotProduct3D(double givenAx, double givenAy, double givenAz, double givenBx, double givenBy, double givenBz, double expected)
         {
             // Arrange - get data to do the test
-
+            Eng_Vector3D first = new Eng_Vector3D (givenAx, givenAy, givenAz);
+            Eng_Vector3D second = new Eng_Vector3D(givenBx, givenBy, givenBz);
             // Act - performing the action
-
+            double result = Calculator.DotProductofTwo3DVectors(first, second);
             // Assert - did we get back the correct answer
+            Assert.Equal(expected, result);
 
         }
 
+
+        /// <summary>
+        /// testing for the calculations of the angle between two 3D vectors
+        /// </summary>
+        /// <param name="givenAx"></param>
+        /// <param name="givenAy"></param>
+        /// <param name="givenAz"></param>
+        /// <param name="givenBx"></param>
+        /// <param name="givenBy"></param>
+        /// <param name="givenBz"></param>
+        /// <param name="expected"></param>
         [Theory]
         // Instructor Data
         [InlineData(3, 4, 5, 6, 9, -1, 50.3627)]
         // Student Data
-
+        [InlineData(3, 1, 6, -1, 2, 1, 17.2440)]
         public void TestAngleBetweenVectors3D(double givenAx, double givenAy, double givenAz, double givenBx, double givenBy, double givenBz, double expected)
         {
             // Arrange - get data to do the test
-
+            Eng_Vector3D first = new Eng_Vector3D(givenAx, givenAy, givenAz);
+            Eng_Vector3D second = new Eng_Vector3D(givenBx, givenBy, givenBz);
             // Act - performing the action
-
+            double result = Calculator.AngleBetweenTwo3DVectors(first, second);
             // Assert - did we get back the correct answer
+            Assert.Equal(expected, result);
 
         }
 
+
+        /// <summary>
+        /// test calculation for crossproduct between two 3d vectors
+        /// </summary>
+        /// <param name="givenA"></param>
+        /// <param name="givenB"></param>
+        /// <param name="expected"></param>
         [Theory]
         [MemberData("CrossProductData")]
         public void TestCrossProduct(Eng_Vector3D givenA, Eng_Vector3D givenB, Eng_Vector3D expected)
@@ -401,11 +489,19 @@ namespace Engine.Specs
             // Arrange - get data to do the test
             // This test uses [MemberData]
             // Act - performing the action
+            Eng_Vector3D result = Calculator.CrossVectorProduct3D(givenA, givenB);
 
             // Assert - did we get back the correct answer
-
+            Assert.Equal(expected, result);
         }
 
+
+        /// <summary>
+        /// test calculation for testing the surface normal between two 3D vectors
+        /// </summary>
+        /// <param name="givenA"></param>
+        /// <param name="givenB"></param>
+        /// <param name="expected"></param>
         [Theory]
         [MemberData("SurfaceNormalData")]
         public void TestSurfaceNormal(Eng_Vector3D givenA, Eng_Vector3D givenB, Eng_Vector3D expected)
