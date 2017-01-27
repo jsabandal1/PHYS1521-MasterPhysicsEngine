@@ -42,5 +42,94 @@
             <param name="givenB">Eng_Point2D: test point B</param>
             <param name="expected">Expected, calculated, midpoint, a Eng_Point2D point, between test points A and B</param>
         </member>
+        <member name="T:Engine.Specs.Lab1Tester">
+            <summary>
+            Test Calculator
+            </summary>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCalculateAdjacentOpposite(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Test Data for Adjacent opposite looking for angle and hypotenuse
+            </summary>
+            <param name="degrees"></param>
+            <param name="hypotenuse"></param>
+            <param name="adjacent"></param>
+            <param name="opposite"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCalculateAdjacentHypotenuse(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Test for solving the adjacent and hypotenuse
+            </summary>
+            <param name="degrees"></param>
+            <param name="opposite"></param>
+            <param name="adjacent"></param>
+            <param name="hypotenuse"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCalculateOppositeHypotenuse(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Test the calculation for the opposite and hypotenuse
+            </summary>
+            <param name="degrees"></param>
+            <param name="adjacent"></param>
+            <param name="opposite"></param>
+            <param name="hypotenuse"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCalculateHypotenuseTheta(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            test for calculating the hypotenuse and angle
+            </summary>
+            <param name="adjacent"></param>
+            <param name="opposite"></param>
+            <param name="hypotenuse"></param>
+            <param name="degrees"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCalculateAdjacentTheta(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            test for Calculating the adjacent and angle theta
+            </summary>
+            <param name="opposite"></param>
+            <param name="hypotenuse"></param>
+            <param name="adjacent"></param>
+            <param name="degrees"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCalculateOppositeTheta(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Test for the calculation of opposite and theta
+            </summary>
+            <param name="adjacent"></param>
+            <param name="hypotenuse"></param>
+            <param name="opposite"></param>
+            <param name="degrees"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.AddVector2DData">
+            <summary>
+            test data for adding two 2D vector
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.NormalizeVector2DData">
+            <summary>
+            test data for normalizing 2D vector
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestAddVector(Engine.Classes.Eng_Vector2D,Engine.Classes.Eng_Vector2D,Engine.Classes.Eng_Vector2D)">
+            <summary>
+            test for adding two vectors
+            </summary>
+            <param name="givenA"></param>
+            <param name="givenB"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestDotProduct(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            test for solving dot product of two 2D vectors
+            </summary>
+            <param name="givenAx"></param>
+            <param name="givenAy"></param>
+            <param name="givenBx"></param>
+            <param name="givenBy"></param>
+            <param name="expected"></param>
+        </member>
     </members>
 </doc>

@@ -4,9 +4,151 @@
         <name>Engine</name>
     </assembly>
     <members>
+        <member name="T:Engine.Classes.Eng_Circle">
+            <summary>
+            This class represents a Circle for mathematical calculations.
+            </summary>
+        </member>
+        <member name="T:Engine.Classes.Eng_Matrix2x2">
+            <summary>
+            This class represents a 2x2  matrix
+            </summary>
+        </member>
+        <member name="T:Engine.Classes.Eng_Matrix3x3">
+            <summary>
+            This class represents a 3x3  matrix
+            </summary>
+        </member>
+        <member name="T:Engine.Classes.Eng_Matrix4x4">
+            <summary>
+            This class represents a 4x4  matrix
+            </summary>
+        </member>
         <member name="T:Engine.Classes.Eng_Point2D">
             <summary>
             This class simulates a point in 2D space.
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Point2D.x">
+            <summary>
+            This property represents the x-coordinate
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Point2D.y">
+            <summary>
+            This property represents the y-coordinate
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Point2D.#ctor">
+            <summary>
+            Empty Eng_Point2D constructor
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Point2D.#ctor(System.Double,System.Double)">
+            <summary>
+            Greedy Eng_Point2D constructor
+            </summary>
+            <param name="x">The x-coordinate</param>
+            <param name="y">The y-coordinate</param>
+        </member>
+        <member name="T:Engine.Classes.Eng_Point3D">
+            <summary>
+            This class simulates a point in 3D LHR space.
+            </summary>
+        </member>
+        <member name="T:Engine.Classes.Eng_Point4D">
+            <summary>
+            This class simulates a point in 3D LHR space using homogeneous coordinate system (i.e. has the w-axis)
+            </summary>
+        </member>
+        <member name="T:Engine.Classes.Eng_PolarVector">
+            <summary>
+            This class represents a 2D vector with magnitude@direction
+            </summary>
+        </member>
+        <member name="T:Engine.Classes.Eng_Quaternion">
+            <summary>
+            This class represents a Quaternion using z-axis heading
+            </summary>
+        </member>
+        <member name="T:Engine.Classes.Eng_Sphere">
+            <summary>
+            This class represents a Sphere for mathematical calculations.
+            </summary>
+        </member>
+        <member name="T:Engine.Classes.Eng_Vector2D">
+            <summary>
+            This class represents a 2D Vector in component form
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Vector2D.x">
+            <summary>
+            x coordinate of the 2D vector
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Vector2D.y">
+            <summary>
+            y coordinate of the 3D vector
+            </summary>
+        </member>
+        <member name="F:Engine.Classes.Eng_Vector2D.magnitude">
+            <summary>
+            magnitude of the vector
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Vector2D.#ctor">
+            <summary>
+            empty Eng_Vector2D constructor
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Vector2D.#ctor(System.Double,System.Double)">
+            <summary>
+            greedy Eng_Vector2D consturctor
+            </summary>
+            <param name="oldX"></param>
+            <param name="oldY"></param>
+        </member>
+        <member name="T:Engine.Classes.Eng_Vector3D">
+            <summary>
+            This class represents a 3D vector in component form
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Vector3D.x">
+            <summary>
+            x coordinate of the 3D vector
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Vector3D.y">
+            <summary>
+            z coordinate of the 3D vector
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Vector3D.z">
+            <summary>
+            z coordinate of the 3D vecotr
+            </summary>
+        </member>
+        <member name="F:Engine.Classes.Eng_Vector3D.magnitude">
+            <summary>
+            magnitude of the 3D vector
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Vector3D.#ctor">
+            <summary>
+            empty Eng_Vector3D constructor
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Vector3D.#ctor(System.Double,System.Double,System.Double)">
+            <summary>
+            greedy Eng_Vector3D consturctor
+            </summary>
+            <param name="oldX"></param>
+            <param name="oldY"></param>
+            <param name="oldZ"></param>
+        </member>
+        <member name="T:Engine.Classes.Eng_Vector4D">
+            <summary>
+            This class represents a 3D component vector in 4D homogeneous space
             </summary>
         </member>
         <member name="T:Engine.Calculator">
@@ -29,6 +171,138 @@
             <param name="a">Eng_Point2D: a 2D point A</param>
             <param name="b">Eng_Point2D: a 2D point B</param>
             <returns>Eng_Point2D: midpoint on the line segemnt</returns>
+        </member>
+        <member name="M:Engine.Calculator.DegreeToRadians(System.Double)">
+            <summary>
+            Converts the angle in degrees to radian
+            </summary>
+            <param name="degree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.RadiansToDegree(System.Double)">
+            <summary>
+            converts the angle in radian to degrees
+            </summary>
+            <param name="radian"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.AdjAndOpp(System.Double,System.Double)">
+            <summary>
+            Returns side Adjacent and Side Opposite if given is degreeAngle and hypotenuse
+            </summary>
+            <param name="degreeAngle"></param>
+            <param name="hypotenuse"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.AdjAndHypo(System.Double,System.Double)">
+            <summary>
+            returns side adjacent and side hypotenuse if given is angle in degrees and side opposite
+            </summary>
+            <param name="degreeAngle"></param>
+            <param name="opposite"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.OppAndHypo(System.Double,System.Double)">
+            <summary>
+            returns a side Opposite and side Hypotenuse if given is angle in degrees and side adjacent
+            </summary>
+            <param name="degreeAngle"></param>
+            <param name="adjacent"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.HypoTheta(System.Double,System.Double)">
+            <summary>
+            Returns a Side and Angle in degrees if given is side Opposite and side Adjacent
+            </summary>
+            <param name="sideOpp"></param>
+            <param name="sideAdj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.AdjTheta(System.Double,System.Double)">
+            <summary>
+            returns a missing Side and missing angle in degrees if given is side Opposite and side Hypotenuse
+            </summary>
+            <param name="sideOpp"></param>
+            <param name="sideHypo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.OppoTheta(System.Double,System.Double)">
+            <summary>
+            returns a side and angle in degrees if the given is side adjacent and side hypotenuse
+            </summary>
+            <param name="SideAdj"></param>
+            <param name="sideHypo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.AddTwo2DVectors(Engine.Classes.Eng_Vector2D,Engine.Classes.Eng_Vector2D)">
+            <summary>
+            Adding two 2D Vectors
+            </summary>
+            <param name="first"></param>
+            <param name="second"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.DotProductofTwo2DVectors(Engine.Classes.Eng_Vector2D,Engine.Classes.Eng_Vector2D)">
+            <summary>
+            Dot Product of two 2D Vectors
+            </summary>
+            <param name="first"></param>
+            <param name="second"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.AngleBetweenTwo2DVectors(Engine.Classes.Eng_Vector2D,Engine.Classes.Eng_Vector2D)">
+            <summary>
+            Calculating the angle of two 2D Vecors in degrees
+            </summary>
+            <param name="first"></param>
+            <param name="second"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.SurfaceNormalOfA2DVector(Engine.Classes.Eng_Vector2D)">
+            <summary>
+            getting the surface normal of a 2D vecotr
+            </summary>
+            <param name="first"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.AddTwo3DVectors(Engine.Classes.Eng_Vector3D,Engine.Classes.Eng_Vector3D)">
+            <summary>
+            Adding two 3D Vectors
+            </summary>
+            <param name="first"></param>
+            <param name="second"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.DotProductofTwo3DVectors(Engine.Classes.Eng_Vector3D,Engine.Classes.Eng_Vector3D)">
+            <summary>
+            Dot Product of two 3D Vectors
+            </summary>
+            <param name="first"></param>
+            <param name="second"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.CrossVectorProduct3D(Engine.Classes.Eng_Vector3D,Engine.Classes.Eng_Vector3D)">
+            <summary>
+            Solving the cross product of two 3D vectors
+            </summary>
+            <param name="first"></param>
+            <param name="second"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.AngleBetweenTwo3DVectors(Engine.Classes.Eng_Vector3D,Engine.Classes.Eng_Vector3D)">
+            <summary>
+            Solving the Angle between two 3D Vectors
+            </summary>
+            <param name="first"></param>
+            <param name="second"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.SurfaceNormalOfA3DVector(Engine.Classes.Eng_Vector3D)">
+            <summary>
+            Surface normal of a 3D Vector
+            </summary>
+            <param name="first"></param>
+            <returns></returns>
         </member>
         <member name="T:Engine.Validator">
             <summary>

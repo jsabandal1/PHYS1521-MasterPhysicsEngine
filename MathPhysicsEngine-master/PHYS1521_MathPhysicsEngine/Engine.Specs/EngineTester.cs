@@ -90,7 +90,7 @@ namespace Engine.Specs
         public void TestMidPoint(Eng_Point2D givenA, Eng_Point2D givenB, Eng_Point2D expected)
         {
             // Arrange - get data to do the test
-            // This test uses [MemberData]
+            // This test uses [MemberData]  
             // Act - performing the action
             Eng_Point2D actual = Calculator.MidPoint(givenA, givenB);
             // Assert - did we get back the correct answer
@@ -98,5 +98,7 @@ namespace Engine.Specs
             Assert.Equal(expected.y, actual.y);
         }
         #endregion
+
+
     }
 }
