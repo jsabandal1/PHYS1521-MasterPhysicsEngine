@@ -1,0 +1,5 @@
+C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Release\Engine.dll
+C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Release\Engine.pdb
+C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\obj\Release\Engine.csprojResolveAssemblyReference.cache
+C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\obj\Release\Engine.dll
+C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\obj\Release\Engine.pdb

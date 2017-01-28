@@ -25,3 +25,6 @@ C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysics
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\obj\Debug\Engine.csprojResolveAssemblyReference.cache
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\obj\Debug\Engine.dll
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\obj\Debug\Engine.pdb
+C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Debug\xunit.runner.utility.desktop.dll
+C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Debug\xunit.abstractions.dll
