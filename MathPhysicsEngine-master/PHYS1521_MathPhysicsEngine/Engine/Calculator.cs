@@ -286,5 +286,28 @@ namespace Engine
             return surfaceVector;
         }
         #endregion
+
+        #region Matrices
+
+        /// <summary>
+        /// Multyiplying a 4x4 Matrix and a 4D vector
+        /// </summary>
+        /// <param name="vector"></param>
+        /// <param name="matrix"></param>
+        /// <returns></returns>
+        public static Eng_Vector4D MultiplyVectorMatrix(Eng_Vector4D vector, Eng_Matrix4x4 matrix)
+        {
+
+            return new Eng_Vector4D /*this is X*/((matrix.m11 * vector.x)+(matrix.m12 * vector.y) +(matrix.m13 * vector.z) +(matrix.m14 * vector.w),
+                                    /*this is Y*/ (matrix.m21 * vector.x) + (matrix.m22 * vector.y) + (matrix.m23 * vector.z) + (matrix.m24 * vector.w),
+                                    /*this is Z*/ (matrix.m31 * vector.x) + (matrix.m32 * vector.y) + (matrix.m33 * vector.z) + (matrix.m34 * vector.w),
+                                    /*this is W*/(matrix.m41 * vector.x) + (matrix.m42 * vector.y) + (matrix.m43 * vector.z) + (matrix.m44 * vector.w)) ;
+        }
+        public static Eng_Matrix4x4 MultiplyTwo4x4Matrix(Eng_Matrix4x4 first, Eng_Matrix4x4 second)
+        {
+            //𝑎11𝑏11 + 𝑎12𝑏21 + 𝑎13𝑏31 ----𝑎11𝑏12 + 𝑎12𝑏22 + 𝑎13𝑏32--- 𝑎11𝑏13 + 𝑎12𝑏23 + 𝑎13𝑏33
+            return new Eng_Matrix4x4( (first.m11 * second.m11)+(first.m12 * second.m21)+(first.m13*second.m31)+(first.m14*second.m41) 
+        }
+        #endregion
     }
 }
