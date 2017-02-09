@@ -227,5 +227,86 @@
             <param name="givenB"></param>
             <param name="expected"></param>
         </member>
+        <member name="T:Engine.Specs.Lab2Tester">
+            <summary>
+            Test Class for lab 2
+            </summary>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.MatrixMultiplicationData">
+            <summary>
+            4x4 matrix multiplication data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.MatrixVectorMultiplicationData">
+            <summary>
+            test data for MatrixVectorMultiplication
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TransposeMatrixData">
+            <summary>
+            transpose matrix data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.InverseMatrixData">
+            <summary>
+            inverse matrix data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestMultiplyMatrices4(Engine.Classes.Eng_Matrix4x4,Engine.Classes.Eng_Matrix4x4,Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            multiply 2 4x4 matrix
+            </summary>
+            <param name="givenA"></param>
+            <param name="givenB"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestMultiplyVector4ByMatrix(Engine.Classes.Eng_Matrix4x4,Engine.Classes.Eng_Vector4D,Engine.Classes.Eng_Vector4D)">
+            <summary>
+            multiplyvector4x4 test
+            </summary>
+            <param name="givenM"></param>
+            <param name="givenV"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestTranposeMatrix(Engine.Classes.Eng_Matrix4x4,Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            test transpose matrix
+            </summary>
+            <param name="given"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestDeterminant4(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            test determinant4x4
+            </summary>
+            <param name="m11"></param>
+            <param name="m12"></param>
+            <param name="m13"></param>
+            <param name="m14"></param>
+            <param name="m21"></param>
+            <param name="m22"></param>
+            <param name="m23"></param>
+            <param name="m24"></param>
+            <param name="m31"></param>
+            <param name="m32"></param>
+            <param name="m33"></param>
+            <param name="m34"></param>
+            <param name="m41"></param>
+            <param name="m42"></param>
+            <param name="m43"></param>
+            <param name="m44"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestInverse4(Engine.Classes.Eng_Matrix4x4,Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            test inverse 
+            </summary>
+            <param name="given"></param>
+            <param name="expected"></param>
+        </member>
     </members>
 </doc>

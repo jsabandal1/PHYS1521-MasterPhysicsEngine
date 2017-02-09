@@ -32,9 +32,9 @@ namespace Engine.Specs
 
 
             // Arrange - get data to do the test
-            Tuple<double, double> expected = new Tuple<double, double>(Math.Round(adjacent,4), Math.Round(opposite,4));
+            Tuple<double, double> expected = new Tuple<double, double>(Math.Round(adjacent, 4), Math.Round(opposite, 4));
             // Act - performing the action
-            Tuple<double, double> results = Calculator.AdjAndOpp(Math.Round(degrees,4), Math.Round(hypotenuse,4));
+            Tuple<double, double> results = Calculator.AdjAndOpp(Math.Round(degrees, 4), Math.Round(hypotenuse, 4));
             // Assert - did we get back the correct answer
             Assert.Equal(expected, results);
 
@@ -96,7 +96,7 @@ namespace Engine.Specs
         // Instructor Data
         [InlineData(3, 4, 5, 53.1301)]
         // Student Data
-        [InlineData(8, 9, 12.0416,48.3664)]
+        [InlineData(8, 9, 12.0416, 48.3665)]
         public void TestCalculateHypotenuseTheta(double adjacent, double opposite, double hypotenuse, double degrees)
         {
             // Arrange - get data to do the test
@@ -104,6 +104,7 @@ namespace Engine.Specs
             // Act - performing the action
             Tuple<double, double> results = Calculator.HypoTheta(Math.Round(opposite, 4), Math.Round(adjacent, 4));
             // Assert - did we get back the correct answer
+
             Assert.Equal(expected, results);
 
         }
@@ -119,7 +120,7 @@ namespace Engine.Specs
         // Instructor Data
         [InlineData(3, 4, 2.6458, 48.5904)]
         // Student Data
-        [InlineData(5, 6.4031, 4, 51.3402)]
+        [InlineData(5, 6.4031, 4, 51.3405)]
         public void TestCalculateAdjacentTheta(double opposite, double hypotenuse, double adjacent, double degrees)
         {
             // Arrange - get data to do the test
@@ -141,15 +142,15 @@ namespace Engine.Specs
         // Instructor Data
         [InlineData(3, 4, 2.6458, 41.4096)]
         // Student Data
-        [InlineData(3, 7.6158, 7, 66.8014)]
+        [InlineData(3, 7.6158, 7, 66.8015)]
         public void TestCalculateOppositeTheta(double adjacent, double hypotenuse, double opposite, double degrees)
         {
             // Arrange - get data to do the test
             Tuple<double, double> expected = new Tuple<double, double>(Math.Round(opposite, 4), Math.Round(degrees, 4));
             // Act - performing the action
-            Tuple<double, double> results = Calculator.OppoTheta(Math.Round(adjacent, 4), Math.Round(hypotenuse, 4));
+            Tuple<double, double> results1 = Calculator.OppoTheta(Math.Round(adjacent, 4), Math.Round(hypotenuse, 4));
             // Assert - did we get back the correct answer
-            Assert.Equal(expected, results);
+            Assert.Equal(expected, results1);
 
         }
         #endregion
@@ -234,9 +235,9 @@ namespace Engine.Specs
             double magnitude = Math.Round(Math.Sqrt(((givenA.x * givenA.x) + (givenA.y * givenA.y))), 2);
             double resultX = Math.Round(givenA.x / magnitude, 4);
             double resultY = Math.Round(givenA.y / magnitude, 4);
-            Eng_Vector2D result = new Eng_Vector2D (resultX, resultY);
+            Eng_Vector2D result = new Eng_Vector2D(resultX, resultY);
             // Assert - did we get back the correct answer
-            Assert.Equal(expected, result);            
+            Assert.Equal(expected, result);
 
         }
 
@@ -252,7 +253,7 @@ namespace Engine.Specs
         // Instructor Data
         [InlineData(3, 4, 6, 9, 54)]
         // Student Data
-        [InlineData(4,5,2,8,48)]
+        [InlineData(4, 5, 2, 8, 48)]
         public void TestDotProduct(double givenAx, double givenAy, double givenBx, double givenBy, double expected)
         {
             // Arrange - get data to do the test
@@ -277,7 +278,7 @@ namespace Engine.Specs
         // Instructor Data
         [InlineData(3, 4, 6, 9, 3.1798)]
         // Student Data
-        [InlineData(3,1,4,2, 0.9899)]
+        [InlineData(3, 1, 4, 2, 0.1419)]
         public void TestAngleBetweenVectors(double givenAx, double givenAy, double givenBx, double givenBy, double expected)
         {
             // Arrange - get data to do the test
@@ -356,7 +357,7 @@ namespace Engine.Specs
 {
         new Eng_Vector3D(2, 4, 4),
         new Eng_Vector3D(1, 6, 5),
-        new Eng_Vector3D(-4, 6, 8)
+        new Eng_Vector3D(-4,-6,8)
 };
 
         }
@@ -438,7 +439,7 @@ namespace Engine.Specs
         public void TestDotProduct3D(double givenAx, double givenAy, double givenAz, double givenBx, double givenBy, double givenBz, double expected)
         {
             // Arrange - get data to do the test
-            Eng_Vector3D first = new Eng_Vector3D (givenAx, givenAy, givenAz);
+            Eng_Vector3D first = new Eng_Vector3D(givenAx, givenAy, givenAz);
             Eng_Vector3D second = new Eng_Vector3D(givenBx, givenBy, givenBz);
             // Act - performing the action
             double result = Calculator.DotProductofTwo3DVectors(first, second);
@@ -483,6 +484,8 @@ namespace Engine.Specs
         /// <param name="givenB"></param>
         /// <param name="expected"></param>
         [Theory]
+
+
         [MemberData("CrossProductData")]
         public void TestCrossProduct(Eng_Vector3D givenA, Eng_Vector3D givenB, Eng_Vector3D expected)
         {

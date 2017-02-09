@@ -34,6 +34,7 @@ namespace Engine
             return new Eng_Point2D(0.5 * (a.x + b.x), 0.5 * (a.y + b.y));
         }
 
+
         #region Trigonometry
 
         /// <summary>
@@ -67,10 +68,10 @@ namespace Engine
             double adjacent;
             double opposite;
 
-            adjacent = Math.Cos(DegreeToRadians(degreeAngle)) * hypotenuse;
-            opposite = Math.Sin(DegreeToRadians(degreeAngle)) * hypotenuse;
+            adjacent = Math.Round(Math.Cos(DegreeToRadians(degreeAngle)) * hypotenuse, 4);
+            opposite = Math.Round(Math.Sin(DegreeToRadians(degreeAngle)) * hypotenuse, 4);
 
-            return new Tuple<double, double>(adjacent, opposite);
+            return new Tuple<double, double>(Math.Round(adjacent, 4), Math.Round(opposite, 4));
         }
 
         /// <summary>
@@ -84,8 +85,8 @@ namespace Engine
             double adjacent;
             double hypotenuse;
 
-            adjacent = Math.Tan(DegreeToRadians(degreeAngle)) * opposite;
-            hypotenuse = Math.Sin(DegreeToRadians(degreeAngle)) * adjacent;
+            adjacent = Math.Round(Math.Tan(DegreeToRadians(degreeAngle)) * opposite, 4);
+            hypotenuse = Math.Round(Math.Sin(DegreeToRadians(degreeAngle)) * adjacent, 4);
 
             return new Tuple<double, double>(adjacent, hypotenuse);
         }
@@ -101,10 +102,10 @@ namespace Engine
             double opposite;
             double hypotenuse;
 
-            opposite = Math.Tan(DegreeToRadians(degreeAngle)) * adjacent;
-            hypotenuse = adjacent / (Math.Cos(DegreeToRadians(degreeAngle)));
+            opposite = Math.Round(Math.Tan(DegreeToRadians(degreeAngle)) * adjacent, 4);
+            hypotenuse = Math.Round(adjacent / (Math.Cos(DegreeToRadians(degreeAngle))), 4);
 
-            return new Tuple<double, double>(opposite, hypotenuse);
+            return new Tuple<double, double>(Math.Round(opposite, 4), Math.Round(hypotenuse, 4));
         }
 
         /// <summary>
@@ -118,10 +119,10 @@ namespace Engine
             double hypotenuse;
             double givenAngle;
 
-            givenAngle = RadiansToDegree( (Math.Atan(sideOpp / sideAdj)) );
+            givenAngle = RadiansToDegree((Math.Atan(sideOpp / sideAdj)));
             hypotenuse = (sideOpp / (Math.Sin(DegreeToRadians(givenAngle))));
 
-            return new Tuple<double, double>(hypotenuse, givenAngle);
+            return new Tuple<double, double>(Math.Round(hypotenuse, 4), Math.Round(givenAngle, 4));
         }
 
         /// <summary>
@@ -135,10 +136,10 @@ namespace Engine
             double missingAngle;
             double missingSide;
 
-            missingAngle = RadiansToDegree(Math.Asin(sideOpp / sideHypo));
-            missingSide = Math.Cos(DegreeToRadians(missingAngle)) * sideHypo;
+            missingAngle = Math.Round(RadiansToDegree(Math.Asin(sideOpp / sideHypo)), 4);
+            missingSide = Math.Round(Math.Cos(DegreeToRadians(missingAngle)) * sideHypo, 4);
 
-            return new Tuple<double, double>(missingAngle, missingSide);
+            return new Tuple<double, double>(Math.Round(missingSide, 4), Math.Round(missingAngle, 4));
 
         }
 
@@ -154,9 +155,9 @@ namespace Engine
             double missingAngle;
 
             missingAngle = RadiansToDegree(Math.Acos(SideAdj / sideHypo));
-            sideOpp = Math.Sin(DegreeToRadians(missingAngle) * sideHypo);
+            sideOpp = Math.Sin(DegreeToRadians(missingAngle)) * sideHypo;
 
-            return new Tuple<double, double>(sideOpp, missingAngle);
+            return new Tuple<double, double>(Math.Round(sideOpp, 4), Math.Round(missingAngle, 4));
         }
         #endregion
 
@@ -170,7 +171,7 @@ namespace Engine
         /// <returns></returns>
         public static Eng_Vector2D AddTwo2DVectors(Eng_Vector2D first, Eng_Vector2D second)
         {
-            
+
             return new Eng_Vector2D(first.x + second.x, first.y + second.y);
         }
 
@@ -183,7 +184,7 @@ namespace Engine
         public static double DotProductofTwo2DVectors(Eng_Vector2D first, Eng_Vector2D second)
         {
             //(Vax * Vbx) + (Vay * Vby)
-            return (first.x * second.x + first.y * second.y);
+            return ((first.x * second.x) + (first.y * second.y));
         }
 
         /// <summary>
@@ -196,7 +197,7 @@ namespace Engine
         {
             double angle;
             // angle =  = cos^-1 ( A * B / ||A|| * ||B|| ) 
-            angle = Math.Acos(DotProductofTwo2DVectors(first, second) / (first.magnitude * second.magnitude));
+            angle = Math.Acos(((first.x * second.x + first.y * second.y) / (first.magnitude * second.magnitude)));
 
             return angle;
         }
@@ -240,7 +241,7 @@ namespace Engine
         public static double DotProductofTwo3DVectors(Eng_Vector3D first, Eng_Vector3D second)
         {
             //(Vax * Vbx) + (Vay * Vby)
-            return (first.x * second.x + first.y * second.y + first.z * second.z);
+            return ((first.x * second.x) + (first.y * second.y) + (first.z * second.z));
         }
 
         /// <summary>
@@ -249,10 +250,12 @@ namespace Engine
         /// <param name="first"></param>
         /// <param name="second"></param>
         /// <returns></returns>
-        public static Eng_Vector3D CrossVectorProduct3D (Eng_Vector3D first, Eng_Vector3D second)
+        public static Eng_Vector3D CrossVectorProduct3D(Eng_Vector3D first, Eng_Vector3D second)
         {
 
-            return new Eng_Vector3D ((first.x * second.z) - (first.z * second.y), (first.z * second.x) - (first.x * second.z), (first.x * second.y) - (first.y * second.x));
+            return new Eng_Vector3D((first.y * second.z) - (first.z * second.y),
+                                       (first.z * second.x) - (first.x * second.z),
+                                       (first.x * second.y) - (first.y * second.x));
         }
 
         /// <summary>
@@ -265,7 +268,7 @@ namespace Engine
         {
             double angle;
             // angle =  = cos^-1 ( A * B / ||A|| * ||B|| ) 
-            angle = Math.Acos(DotProductofTwo3DVectors(first, second) / (first.magnitude * second.magnitude));
+            angle = DegreeToRadians(Math.Acos(DotProductofTwo3DVectors(first, second) / (first.magnitude * second.magnitude)));
 
             return angle;
         }
@@ -303,10 +306,36 @@ namespace Engine
                                     /*this is Z*/ (matrix.m31 * vector.x) + (matrix.m32 * vector.y) + (matrix.m33 * vector.z) + (matrix.m34 * vector.w),
                                     /*this is W*/(matrix.m41 * vector.x) + (matrix.m42 * vector.y) + (matrix.m43 * vector.z) + (matrix.m44 * vector.w)) ;
         }
+
+        /// <summary>
+        /// multiplying two 4x4 matrix 
+        /// </summary>
+        /// <param name="first"></param>
+        /// <param name="second"></param>
+        /// <returns></returns>
         public static Eng_Matrix4x4 MultiplyTwo4x4Matrix(Eng_Matrix4x4 first, Eng_Matrix4x4 second)
         {
             //𝑎11𝑏11 + 𝑎12𝑏21 + 𝑎13𝑏31 ----𝑎11𝑏12 + 𝑎12𝑏22 + 𝑎13𝑏32--- 𝑎11𝑏13 + 𝑎12𝑏23 + 𝑎13𝑏33
-            return new Eng_Matrix4x4( (first.m11 * second.m11)+(first.m12 * second.m21)+(first.m13*second.m31)+(first.m14*second.m41) 
+            return new Eng_Matrix4x4(
+                /*m11*/(first.m11 * second.m11) + (first.m12 * second.m21) + (first.m13 * second.m31) + (first.m14 * second.m41),
+                /*m12*/(first.m11 * second.m12) + (first.m12 * second.m22) + (first.m13 * second.m32) + (first.m14 * second.m42),
+                /*m13*/(first.m11 * second.m13) + (first.m12 * second.m23) + (first.m13 * second.m33) + (first.m14 * second.m43),
+                /*m14*/(first.m11 * second.m14) + (first.m12 * second.m24) + (first.m13 * second.m34) + (first.m14 * second.m44),
+
+                /*m21*/(first.m21 * second.m11) + (first.m22 * second.m21) + (first.m23 * second.m31) + (first.m24 * second.m41),
+                /*m22*/(first.m21 * second.m12) + (first.m22 * second.m22) + (first.m23 * second.m32) + (first.m24 * second.m42),
+                /*m23*/(first.m21 * second.m13) + (first.m22 * second.m23) + (first.m23 * second.m33) + (first.m24 * second.m43),
+                /*m24*/(first.m21 * second.m14) + (first.m22 * second.m24) + (first.m23 * second.m34) + (first.m24 * second.m44),
+
+                /*m31*/(first.m31 * second.m11) + (first.m32 * second.m21) + (first.m33 * second.m31) + (first.m34 * second.m41),
+                /*m32*/(first.m31 * second.m12) + (first.m32 * second.m22) + (first.m33 * second.m32) + (first.m34 * second.m42),
+                /*m33*/(first.m31 * second.m13) + (first.m32 * second.m23) + (first.m33 * second.m33) + (first.m34 * second.m43),
+                /*m34*/(first.m31 * second.m14) + (first.m32 * second.m24) + (first.m33 * second.m34) + (first.m34 * second.m44),
+
+                /*m41*/(first.m41 * second.m11) + (first.m42 * second.m21) + (first.m43 * second.m31) + (first.m44 * second.m41),
+                /*m42*/(first.m41 * second.m12) + (first.m42 * second.m22) + (first.m43 * second.m32) + (first.m44 * second.m42),
+                /*m43*/(first.m41 * second.m13) + (first.m42 * second.m23) + (first.m43 * second.m33) + (first.m44 * second.m43),
+                /*m44*/(first.m41 * second.m14) + (first.m42 * second.m24) + (first.m43 * second.m34) + (first.m44 * second.m44));
         }
         #endregion
     }

@@ -101,6 +101,10 @@ namespace Engine.Classes
 
 
         /// <summary>
+        /// empty constructor
+        /// </summary>
+        public Eng_Matrix4x4() { }
+        /// <summary>
         /// 4x4 Matrix
         /// </summary>
         /// <param name="m11"></param>

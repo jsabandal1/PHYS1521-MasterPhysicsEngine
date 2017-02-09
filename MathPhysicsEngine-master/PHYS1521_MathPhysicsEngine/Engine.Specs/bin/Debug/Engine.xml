@@ -14,6 +14,35 @@
             This class represents a 2x2  matrix
             </summary>
         </member>
+        <member name="P:Engine.Classes.Eng_Matrix2x2.m11">
+            <summary>
+            row 1 column 1
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix2x2.m12">
+            <summary>
+            row 1 column 2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix2x2.m21">
+            <summary>
+            row 2 column 1
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix2x2.m22">
+            <summary>
+            row 2 column 2
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Matrix2x2.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            2x2 Matrix
+            </summary>
+            <param name="m11"></param>
+            <param name="m12"></param>
+            <param name="m21"></param>
+            <param name="m22"></param>
+        </member>
         <member name="T:Engine.Classes.Eng_Matrix3x3">
             <summary>
             This class represents a 3x3  matrix
@@ -23,6 +52,112 @@
             <summary>
             This class represents a 4x4  matrix
             </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m11">
+            <summary>
+            row 1 column 1
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m12">
+            <summary>
+            row 1 column 2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m13">
+            <summary>
+            row 1 column 3
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m14">
+            <summary>
+            row 1 column 4
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m21">
+            <summary>
+            row 2 column 1
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m22">
+            <summary>
+            row 2 column 2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m23">
+            <summary>
+            row 2 column 3
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m24">
+            <summary>
+            row 2 column 4
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m31">
+            <summary>
+            row 3 column 1
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m32">
+            <summary>
+            row 3 column 2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m33">
+            <summary>
+            row 3 column 3
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m34">
+            <summary>
+            row 3 column 4
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m41">
+            <summary>
+            row 4 column 1
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m42">
+            <summary>
+            row 4 column 2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m43">
+            <summary>
+            row 4 column 3
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix4x4.m44">
+            <summary>
+            row 4 column 4
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Matrix4x4.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Matrix4x4.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            4x4 Matrix
+            </summary>
+            <param name="m11"></param>
+            <param name="m12"></param>
+            <param name="m13"></param>
+            <param name="m14"></param>
+            <param name="m21"></param>
+            <param name="m22"></param>
+            <param name="m23"></param>
+            <param name="m24"></param>
+            <param name="m31"></param>
+            <param name="m32"></param>
+            <param name="m33"></param>
+            <param name="m34"></param>
+            <param name="m41"></param>
+            <param name="m42"></param>
+            <param name="m43"></param>
+            <param name="m54"></param>
         </member>
         <member name="T:Engine.Classes.Eng_Point2D">
             <summary>
@@ -150,6 +285,35 @@
             <summary>
             This class represents a 3D component vector in 4D homogeneous space
             </summary>
+        </member>
+        <member name="F:Engine.Classes.Eng_Vector4D.w">
+            <summary>
+            W property always 1
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Vector4D.x">
+            <summary>
+            x property
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Vector4D.y">
+            <summary>
+            y property
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Vector4D.z">
+            <summary>
+            z property
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Vector4D.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            4D Vector Object
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="z"></param>
+            <param name="w"></param>
         </member>
         <member name="T:Engine.Calculator">
             <summary>
@@ -302,6 +466,22 @@
             Surface normal of a 3D Vector
             </summary>
             <param name="first"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.MultiplyVectorMatrix(Engine.Classes.Eng_Vector4D,Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            Multyiplying a 4x4 Matrix and a 4D vector
+            </summary>
+            <param name="vector"></param>
+            <param name="matrix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.MultiplyTwo4x4Matrix(Engine.Classes.Eng_Matrix4x4,Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            multiplying two 4x4 matrix 
+            </summary>
+            <param name="first"></param>
+            <param name="second"></param>
             <returns></returns>
         </member>
         <member name="T:Engine.Validator">
