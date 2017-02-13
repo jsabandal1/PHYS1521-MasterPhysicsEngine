@@ -78,3 +78,24 @@ C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysics
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\obj\Debug\Engine.Specs.csprojResolveAssemblyReference.cache
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\obj\Debug\Engine.Specs.dll
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\obj\Debug\Engine.Specs.pdb
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.abstractions.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.runner.utility.desktop.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\Engine.Specs.XML
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\Engine.Specs.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\Engine.Specs.pdb
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\Engine.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.assert.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.core.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.execution.desktop.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\Engine.pdb
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\Engine.xml
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.assert.pdb
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.assert.xml
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.core.pdb
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.core.xml
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.execution.desktop.pdb
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.execution.desktop.xml
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\obj\Debug\Engine.Specs.csprojResolveAssemblyReference.cache
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\obj\Debug\Engine.Specs.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\obj\Debug\Engine.Specs.pdb

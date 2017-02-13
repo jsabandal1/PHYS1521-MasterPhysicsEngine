@@ -28,3 +28,12 @@ C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysics
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Debug\xunit.runner.visualstudio.testadapter.dll
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Debug\xunit.runner.utility.desktop.dll
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Debug\xunit.abstractions.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Debug\xunit.runner.utility.desktop.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Debug\xunit.abstractions.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Debug\Engine.XML
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Debug\Engine.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\bin\Debug\Engine.pdb
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\obj\Debug\Engine.csprojResolveAssemblyReference.cache
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\obj\Debug\Engine.dll
+C:\Users\jsabandal1\Desktop\New folder\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine\obj\Debug\Engine.pdb

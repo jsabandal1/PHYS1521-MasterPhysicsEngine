@@ -142,8 +142,26 @@ namespace Engine.Specs
             // Act - performing the action
 
             // Assert - did we get back the correct answer
-            Assert.Equal(expected, result);
-           
+            Assert.Equal(expected.m11, result.m11);
+            Assert.Equal(expected.m12, result.m12);
+            Assert.Equal(expected.m13, result.m13);
+            Assert.Equal(expected.m14, result.m14);
+            
+            Assert.Equal(expected.m21, result.m21);
+            Assert.Equal(expected.m22, result.m22);
+            Assert.Equal(expected.m23, result.m23);
+            Assert.Equal(expected.m24, result.m24);
+
+            Assert.Equal(expected.m31, result.m32);
+            Assert.Equal(expected.m32, result.m32);
+            Assert.Equal(expected.m33, result.m33);
+            Assert.Equal(expected.m34, result.m34);
+
+            Assert.Equal(expected.m41, result.m42);
+            Assert.Equal(expected.m42, result.m42);
+            Assert.Equal(expected.m43, result.m43);
+            Assert.Equal(expected.m44, result.m44);
+
         }
 
         /// <summary>
