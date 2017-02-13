@@ -31,7 +31,7 @@ namespace Engine
         /// <returns>Eng_Point2D: midpoint on the line segemnt</returns>
         public static Eng_Point2D MidPoint(Eng_Point2D a, Eng_Point2D b)
         {
-            return new Eng_Point2D(0.5 * (a.x + b.x), 0.5 * (a.y + b.y));
+            return new Eng_Point2D( (a.x + b.x) / 2 ,  (a.y + b.y) / 2);
         }
 
 
@@ -196,8 +196,10 @@ namespace Engine
         public static double AngleBetweenTwo2DVectors(Eng_Vector2D first, Eng_Vector2D second)
         {
             double angle;
+
+
             // angle =  = cos^-1 ( A * B / ||A|| * ||B|| ) 
-            angle = Math.Acos(((first.x * second.x + first.y * second.y) / (first.magnitude * second.magnitude)));
+            angle = Math.Acos(((DotProductofTwo2DVectors(first, second)) / ((first.magnitude) * (second.magnitude))));
 
             return angle;
         }
@@ -337,6 +339,84 @@ namespace Engine
                 /*m43*/(first.m41 * second.m13) + (first.m42 * second.m23) + (first.m43 * second.m33) + (first.m44 * second.m43),
                 /*m44*/(first.m41 * second.m14) + (first.m42 * second.m24) + (first.m43 * second.m34) + (first.m44 * second.m44));
         }
+        /// <summary>
+        /// Transposes a 4x4 matrix
+        /// </summary>
+        /// <param name="first"></param>
+        /// <returns></returns>
+        public static Eng_Matrix4x4 TransposeMatrix(Eng_Matrix4x4 first)
+        {
+            //double m11, double m12, double m13, double m14,
+            //double m21, double m22, double m23, double m24,
+            //double m31, double m32, double m33, double m34,
+            //double m41, double m42, double m43, double m54)
+            return new Eng_Matrix4x4(first.m11, first.m21, first.m31, first.m41,
+                                     first.m12, first.m22, first.m32, first.m42,
+                                     first.m13, first.m23, first.m33, first.m43,
+                                     first.m14, first.m24, first.m34, first.m44);
+        }
+
+        /// <summary>
+        /// calculate the determinant of a 4x4 matrix
+        /// </summary>
+        /// <param name="first"></param>
+        /// <returns></returns>
+        public static double CalculateDeterminant4x4(Eng_Matrix4x4 first)
+        {
+        return (first.m11 * first.m22 * first.m33 * first.m44 + 
+                first.m12 * first.m23 * first.m34 * first.m41 + 
+                first.m13 * first.m24 * first.m31 * first.m42 + 
+                first.m14 * first.m21 * first.m32 * first.m43 - 
+                first.m14 * first.m23 * first.m32 * first.m41 - 
+                first.m13 * first.m22 * first.m31 * first.m44 - 
+                first.m12 * first.m21 * first.m34 * first.m43 - 
+                first.m11 * first.m24 * first.m33 * first.m42);
+        }
+        /// <summary>
+        /// inverse of a 4x4 matrix
+        /// </summary>
+        /// <param name="m"></param>
+        /// <returns></returns>
+        public static Eng_Matrix4x4 InverseOfA4x4Matrix(Eng_Matrix4x4 m)
+        {
+            //22 33 44 --- 23 34 42 --- 24 32 43 --- 22 34 43 --- 23 32 44 --- 24 33 42
+            double multiplier = 1 / CalculateDeterminant4x4(m);
+            return new Eng_Matrix4x4( multiplier * (m.m22 * m.m33 * m.m44 + m.m23 * m.m34 * m.m42 + m.m24 * m.m32 * m.m43 - m.m22 * m.m34 * m.m43 - m.m23 * m.m32 * m.m44 - m.m24 * m.m33 * m.m42),
+                                      multiplier * (m.m12 * m.m34 * m.m43 + m.m13 * m.m32 * m.m44 + m.m14 * m.m33 * m.m42 - m.m12 * m.m33 * m.m44 - m.m13 * m.m34 * m.m42 - m.m14 * m.m32 * m.m43),
+                                      multiplier * (m.m12 * m.m23 * m.m44 + m.m13 * m.m24 * m.m42 + m.m14 * m.m22 * m.m43 - m.m12 * m.m24 * m.m43 - m.m13 * m.m22 * m.m44 - m.m14 * m.m23 * m.m42),
+                                      multiplier * (m.m12 * m.m24 * m.m33 + m.m13 * m.m22 * m.m34 + m.m14 * m.m23 * m.m32 - m.m12 * m.m23 * m.m34 - m.m13 * m.m24 * m.m32 - m.m14 * m.m22 * m.m33),
+                                      multiplier * (m.m21 * m.m34 * m.m43 + m.m23 * m.m31 * m.m44 + m.m24 * m.m33 * m.m41 - m.m21 * m.m33 * m.m44 - m.m23 * m.m34 * m.m41 - m.m24 * m.m31 * m.m43),
+                                      multiplier * (m.m11 * m.m33 * m.m44 + m.m13 * m.m34 * m.m41 + m.m14 * m.m31 * m.m43 - m.m11 * m.m34 * m.m43 - m.m13 * m.m31 * m.m44 - m.m14 * m.m33 * m.m41),
+                                      multiplier * (m.m11 * m.m24 * m.m43 + m.m13 * m.m21 * m.m44 + m.m14 * m.m23 * m.m41 - m.m11 * m.m23 * m.m44 - m.m13 * m.m24 * m.m41 - m.m14 * m.m21 * m.m43),
+                                      multiplier * (m.m11 * m.m23 * m.m34 + m.m13 * m.m24 * m.m31 + m.m14 * m.m21 * m.m33 - m.m11 * m.m24 * m.m33 - m.m13 * m.m21 * m.m34 - m.m14 * m.m23 * m.m31),
+                                      multiplier * (m.m21 * m.m32 * m.m44 + m.m22 * m.m34 * m.m41 + m.m24 * m.m31 * m.m42 - m.m21 * m.m34 * m.m42 - m.m22 * m.m31 * m.m44 - m.m24 * m.m32 * m.m41),
+                                      multiplier * (m.m11 * m.m34 * m.m42 + m.m12 * m.m31 * m.m44 + m.m14 * m.m32 * m.m41 - m.m11 * m.m32 * m.m44 - m.m12 * m.m34 * m.m41 - m.m14 * m.m31 * m.m42),
+                                        Math.Round(multiplier * (m.m11 * m.m22 * m.m44 + m.m12 * m.m24 * m.m41 + m.m14 * m.m21 * m.m42 - m.m11 * m.m24 * m.m42 - m.m12 * m.m21 * m.m44 - m.m14 * m.m22 * m.m41),4),
+                                        Math.Round(multiplier * (m.m11 * m.m24 * m.m32 + m.m12 * m.m21 * m.m34 + m.m14 * m.m22 * m.m31 - m.m11 * m.m22 * m.m34 - m.m12 * m.m24 * m.m31 - m.m14 * m.m21 * m.m32),4),
+                                      multiplier * (m.m21 * m.m33 * m.m42 + m.m22 * m.m31 * m.m43 + m.m23 * m.m32 * m.m41 - m.m21 * m.m32 * m.m43 - m.m22 * m.m33 * m.m41 - m.m23 * m.m31 * m.m42),
+                                      multiplier * (m.m11 * m.m32 * m.m43 + m.m12 * m.m33 * m.m41 + m.m13 * m.m31 * m.m42 - m.m11 * m.m33 * m.m42 - m.m12 * m.m31 * m.m43 - m.m13 * m.m32 * m.m41),
+                                      multiplier * (m.m11 * m.m23 * m.m42 + m.m12 * m.m21 * m.m43 + m.m13 * m.m22 * m.m41 - m.m11 * m.m22 * m.m43 - m.m12 * m.m23 * m.m41 - m.m13 * m.m21 * m.m42),
+                                      multiplier * (m.m11 * m.m22 * m.m33 + m.m12 * m.m23 * m.m31 + m.m13 * m.m21 * m.m32 - m.m11 * m.m23 * m.m32 - m.m12 * m.m21 * m.m33 - m.m13 * m.m22 * m.m31));
+            //this.m11 = m11;
+            //this.m12 = m12;
+            //this.m13 = m13;
+            //this.m14 = m14;
+
+            //this.m21 = m21;
+            //this.m22 = m22;
+            //this.m23 = m23;
+            //this.m24 = m24;
+
+            //this.m31 = m31;
+            //this.m32 = m32;
+            //this.m33 = m33;
+            //this.m34 = m34;
+
+            //this.m41 = m41;
+            //this.m42 = m42;
+            //this.m43 = m43;
+            //this.m44 = m44;
+        } 
         #endregion
     }
 }

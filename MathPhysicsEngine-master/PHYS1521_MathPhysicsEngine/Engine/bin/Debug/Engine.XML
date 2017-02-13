@@ -157,7 +157,7 @@
             <param name="m41"></param>
             <param name="m42"></param>
             <param name="m43"></param>
-            <param name="m54"></param>
+            <param name="m44"></param>
         </member>
         <member name="T:Engine.Classes.Eng_Point2D">
             <summary>
@@ -482,6 +482,27 @@
             </summary>
             <param name="first"></param>
             <param name="second"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.TransposeMatrix(Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            Transposes a 4x4 matrix
+            </summary>
+            <param name="first"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.CalculateDeterminant4x4(Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            calculate the determinant of a 4x4 matrix
+            </summary>
+            <param name="first"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.InverseOfA4x4Matrix(Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            inverse of a 4x4 matrix
+            </summary>
+            <param name="m"></param>
             <returns></returns>
         </member>
         <member name="T:Engine.Validator">

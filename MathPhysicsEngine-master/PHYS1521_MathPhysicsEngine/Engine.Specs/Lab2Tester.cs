@@ -136,12 +136,14 @@ namespace Engine.Specs
         [MemberData("MatrixMultiplicationData")]
         public void TestMultiplyMatrices4(Eng_Matrix4x4 givenA, Eng_Matrix4x4 givenB, Eng_Matrix4x4 expected)
         {
+             Eng_Matrix4x4 result = Calculator.MultiplyTwo4x4Matrix(givenA, givenB);
             // Arrange - get data to do the test
             // This test uses [MemberData]
             // Act - performing the action
-            
+
             // Assert - did we get back the correct answer
-            
+            Assert.Equal(expected, result);
+           
         }
 
         /// <summary>
@@ -228,6 +230,9 @@ namespace Engine.Specs
         [MemberData("InverseMatrixData")]
         public void TestInverse4(Eng_Matrix4x4 given, Eng_Matrix4x4 expected)
         {
+            Eng_Matrix4x4 first = Calculator.InverseOfA4x4Matrix(given);
+
+            Assert.Equal(expected, first);
             // Arrange - get data to do the test
             // This test uses [MemberData]
             // Act - performing the action
