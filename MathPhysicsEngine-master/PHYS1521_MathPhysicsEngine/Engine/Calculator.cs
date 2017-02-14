@@ -405,7 +405,10 @@ namespace Engine
         #endregion
 
         #region 2D Rotations
-
+        public static Eng_Matrix3x3 RotationMatrix(double degree)
+        {
+            return new Eng_Matrix3x3(Math.Cos(DegreeToRadians(degree)), -Math.Sin(DegreeToRadians(degree)), 0, Math.Sin(DegreeToRadians(degree)), Math.Cos(DegreeToRadians(degree)), 0, 0, 0, 1);
+        }
         #endregion
 
     }
