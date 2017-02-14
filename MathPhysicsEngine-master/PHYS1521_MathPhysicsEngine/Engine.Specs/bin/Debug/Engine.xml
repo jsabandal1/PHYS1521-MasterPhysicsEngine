@@ -191,6 +191,34 @@
             This class simulates a point in 3D LHR space.
             </summary>
         </member>
+        <member name="P:Engine.Classes.Eng_Point3D.x">
+            <summary>
+            X point
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Point3D.y">
+            <summary>
+            Y point
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Point3D.z">
+            <summary>
+            Z point
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Point3D.#ctor">
+            <summary>
+            greedy constructor
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Point3D.#ctor(System.Double,System.Double,System.Double)">
+            <summary>
+            Represents a 3Dimensional point
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="z"></param>
+        </member>
         <member name="T:Engine.Classes.Eng_Point4D">
             <summary>
             This class simulates a point in 3D LHR space using homogeneous coordinate system (i.e. has the w-axis)
@@ -255,7 +283,7 @@
         </member>
         <member name="P:Engine.Classes.Eng_Vector3D.y">
             <summary>
-            z coordinate of the 3D vector
+            y coordinate of the 3D vector
             </summary>
         </member>
         <member name="P:Engine.Classes.Eng_Vector3D.z">

@@ -216,7 +216,9 @@ namespace Engine.Specs
             // Act - performing the action
             Eng_Vector2D result = Calculator.AddTwo2DVectors(givenA, givenB);
             // Assert - did we get back the correct answer
-            Assert.Equal(expected, result);
+            Assert.Equal(expected.magnitude, result.magnitude);
+            Assert.Equal(expected.x, result.x);
+            Assert.Equal(expected.y, result.y);
         }
 
         /// <summary>
@@ -391,16 +393,16 @@ namespace Engine.Specs
         [MemberData("AddVector3DData")]
         public void TestAddVector(Eng_Vector3D givenA, Eng_Vector3D givenB, Eng_Vector3D expected)
         {
-            //        new Eng_Vector3D(1, 1, 2),
-            //new Eng_Vector3D(5, 3, 1),
-            //new Eng_Vector3D(6, 4, 3)
             // Arrange - get data to do the test
             // This test uses [MemberData]
             // Act - performing the action
             Eng_Vector3D result = Calculator.AddTwo3DVectors(givenA, givenB);
 
             // Assert - did we get back the correct answer
-            Assert.Equal(expected, result);
+            Assert.Equal(Math.Round(expected.magnitude,4),Math.Round(result.magnitude,4));
+            Assert.Equal(expected.x,result.x);
+            Assert.Equal(expected.y,result.y);
+            Assert.Equal(expected.z,result.z);
         }
 
         /// <summary>
@@ -495,7 +497,9 @@ namespace Engine.Specs
             Eng_Vector3D result = Calculator.CrossVectorProduct3D(givenA, givenB);
 
             // Assert - did we get back the correct answer
-            Assert.Equal(expected, result);
+            Assert.Equal(expected.x , result.x);
+            Assert.Equal(expected.y, result.y);
+            Assert.Equal(expected.z, result.z);
         }
 
 

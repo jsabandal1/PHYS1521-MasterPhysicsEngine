@@ -78,25 +78,25 @@ namespace Engine.Specs
             };
         }
 
-        /// <summary>
-        /// This test test the calcualtion of the midpoint, as a Eng_Point2D type, between
-        /// two Eng_Point2D points. The test data for this test comes from "MidPointData".
-        /// </summary>
-        /// <param name="givenA">Eng_Point2D: test point A</param>
-        /// <param name="givenB">Eng_Point2D: test point B</param>
-        /// <param name="expected">Expected, calculated, midpoint, a Eng_Point2D point, between test points A and B</param>
-        [Theory]
-        [MemberData("MidPointData")]
-        public void TestMidPoint(Eng_Point2D givenA, Eng_Point2D givenB, Eng_Point2D expected)
-        {
-            // Arrange - get data to do the test
-            // This test uses [MemberData]  
-            // Act - performing the action
-            Eng_Point2D actual = Calculator.MidPoint(givenA, givenB);
-            // Assert - did we get back the correct answer
-            Assert.Equal(expected.x, actual.x);
-            Assert.Equal(expected.y, actual.y);
-        }
+        ///// <summary>
+        ///// This test test the calcualtion of the midpoint, as a Eng_Point2D type, between
+        ///// two Eng_Point2D points. The test data for this test comes from "MidPointData".
+        ///// </summary>
+        ///// <param name="givenA">Eng_Point2D: test point A</param>
+        ///// <param name="givenB">Eng_Point2D: test point B</param>
+        ///// <param name="expected">Expected, calculated, midpoint, a Eng_Point2D point, between test points A and B</param>
+        //[Theory]
+        //[MemberData("MidPointData")]
+        //public void TestMidPoint(Eng_Point2D givenA, Eng_Point2D givenB, Eng_Point2D expected)
+        //{
+        //    // Arrange - get data to do the test
+        //    // This test uses [MemberData]  
+        //    // Act - performing the action
+        //    Eng_Point2D actual = Calculator.MidPoint(givenA, givenB);
+        //    // Assert - did we get back the correct answer
+        //    Assert.Equal(expected.x, actual.x);
+        //    Assert.Equal(expected.y, actual.y);
+        //}
         #endregion
 
 

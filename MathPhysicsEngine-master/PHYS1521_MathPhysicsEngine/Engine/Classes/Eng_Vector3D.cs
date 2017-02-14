@@ -17,7 +17,7 @@ namespace Engine.Classes
         public double x { get; set; }
         
         /// <summary>
-        /// z coordinate of the 3D vector
+        /// y coordinate of the 3D vector
         /// </summary>
         public double y { get; set; }
         

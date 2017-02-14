@@ -152,12 +152,12 @@ namespace Engine.Specs
             Assert.Equal(expected.m23, result.m23);
             Assert.Equal(expected.m24, result.m24);
 
-            Assert.Equal(expected.m31, result.m32);
+            Assert.Equal(expected.m31, result.m31);
             Assert.Equal(expected.m32, result.m32);
             Assert.Equal(expected.m33, result.m33);
             Assert.Equal(expected.m34, result.m34);
 
-            Assert.Equal(expected.m41, result.m42);
+            Assert.Equal(expected.m41, result.m41);
             Assert.Equal(expected.m42, result.m42);
             Assert.Equal(expected.m43, result.m43);
             Assert.Equal(expected.m44, result.m44);
@@ -174,12 +174,11 @@ namespace Engine.Specs
         [MemberData("MatrixVectorMultiplicationData")]
         public void TestMultiplyVector4ByMatrix(Eng_Matrix4x4 givenM, Eng_Vector4D givenV, Eng_Vector4D expected)
         {
-            // Arrange - get data to do the test
-            // This test uses [MemberData]
-            // Act - performing the action
-            
-            // Assert - did we get back the correct answer
-            
+            Eng_Vector4D result = Calculator.MultiplyVectorMatrix(givenV, givenM);
+            Assert.Equal(expected.x, result.x);
+            Assert.Equal(expected.y, result.y);
+            Assert.Equal(expected.z, result.z);
+            Assert.Equal(expected.w, result.w);
         }
 
         /// <summary>
@@ -194,9 +193,27 @@ namespace Engine.Specs
             // Arrange - get data to do the test
             // This test uses [MemberData]
             // Act - performing the action
-            
-            // Assert - did we get back the correct answer
-            
+            Eng_Matrix4x4 result = Calculator.TransposeMatrix(given);
+
+            Assert.Equal(expected.m11, result.m11);
+            Assert.Equal(expected.m12, result.m12);
+            Assert.Equal(expected.m13, result.m13);
+            Assert.Equal(expected.m14, result.m14);
+
+            Assert.Equal(expected.m21, result.m21);
+            Assert.Equal(expected.m22, result.m22);
+            Assert.Equal(expected.m23, result.m23);
+            Assert.Equal(expected.m24, result.m24);
+
+            Assert.Equal(expected.m31, result.m31);
+            Assert.Equal(expected.m32, result.m32);
+            Assert.Equal(expected.m33, result.m33);
+            Assert.Equal(expected.m34, result.m34);
+
+            Assert.Equal(expected.m41, result.m41);
+            Assert.Equal(expected.m42, result.m42);
+            Assert.Equal(expected.m43, result.m43);
+            Assert.Equal(expected.m44, result.m44);
         }
 
         /// <summary>
@@ -223,7 +240,6 @@ namespace Engine.Specs
         // Instructor Data
         [InlineData(2, 0, 0, 0.5, 0, -2, 0, 1.5, 0, 0, 3, 2, 0, 0, 0, 1, -12)]
         // Student Data
-
         public void TestDeterminant4(
             double m11, double m12, double m13, double m14,
             double m21, double m22, double m23, double m24,
@@ -231,12 +247,13 @@ namespace Engine.Specs
             double m41, double m42, double m43, double m44,
             double expected)
         {
-            // Arrange - get data to do the test
-           
-            // Act - performing the action
-           
-            // Assert - did we get back the correct answer
-            
+            Eng_Matrix4x4 givenMatrix = new Eng_Matrix4x4(
+             m11, m12, m13, m14,
+             m21, m22, m23, m24,
+             m31, m32, m33, m34,
+             m41, m42, m43, m44);
+            double result = Calculator.CalculateDeterminant4x4(givenMatrix);
+            Assert.Equal(expected, result);     
         }
 
         /// <summary>
@@ -248,54 +265,72 @@ namespace Engine.Specs
         [MemberData("InverseMatrixData")]
         public void TestInverse4(Eng_Matrix4x4 given, Eng_Matrix4x4 expected)
         {
-            Eng_Matrix4x4 first = Calculator.InverseOfA4x4Matrix(given);
+            Eng_Matrix4x4 result = Calculator.InverseOfA4x4Matrix(given);
 
-            Assert.Equal(expected, first);
+            Assert.Equal(expected.m11, result.m11);
+            Assert.Equal(expected.m12, result.m12);
+            Assert.Equal(expected.m13, result.m13);
+            Assert.Equal(expected.m14, result.m14);
+
+            Assert.Equal(expected.m21, result.m21);
+            Assert.Equal(expected.m22, result.m22);
+            Assert.Equal(expected.m23, result.m23);
+            Assert.Equal(expected.m24, result.m24);
+
+            Assert.Equal(expected.m31, result.m31);
+            Assert.Equal(expected.m32, result.m32);
+            Assert.Equal(expected.m33, result.m33);
+            Assert.Equal(expected.m34, result.m34);
+
+            Assert.Equal(expected.m41, result.m41);
+            Assert.Equal(expected.m42, result.m42);
+            Assert.Equal(expected.m43, result.m43);
+            Assert.Equal(expected.m44, result.m44);
             // Arrange - get data to do the test
             // This test uses [MemberData]
             // Act - performing the action
-            
+
             // Assert - did we get back the correct answer
-           
+
         }
         #endregion
 
-        //#region 2D Rotation
+        #region 2D Rotation
 
-        ///// <summary>
-        ///// testrotation
-        ///// </summary>
-        ///// <param name="x1"></param>
-        ///// <param name="y1"></param>
-        ///// <param name="x2"></param>
-        ///// <param name="y2"></param>
-        ///// <param name="x3"></param>
-        ///// <param name="y3"></param>
-        ///// <param name="degrees"></param>
-        ///// <param name="expectedx1"></param>
-        ///// <param name="expectedy1"></param>
-        ///// <param name="expectedx2"></param>
-        ///// <param name="expectedy2"></param>
-        ///// <param name="expectedx3"></param>
-        ///// <param name="expectedy3"></param>
-        //[Theory]
-        //// Instructor Data
-        //[InlineData(3, -1, -4, 5, 2, 3, 25, 3.1415, 0.3615, -5.7383, 2.8411, 0.5448, 3.5642)]
-        //// Student Data
-        //public void TestRotation2D(
-        //    double x1, double y1, double x2, double y2, double x3, double y3, double degrees,
-        //    double expectedx1, double expectedy1,
-        //    double expectedx2, double expectedy2,
-        //    double expectedx3, double expectedy3)
-        //{
-        //    // Arrange - get data to do the test
-           
-        //    // Act - performing the action
-            
-        //    // Assert - did we get back the correct answer
-            
-        //}
-        //#endregion
+        /// <summary>
+        /// testrotation
+        /// </summary>
+        /// <param name="x1"></param>
+        /// <param name="y1"></param>
+        /// <param name="x2"></param>
+        /// <param name="y2"></param>
+        /// <param name="x3"></param>
+        /// <param name="y3"></param>
+        /// <param name="degrees"></param>
+        /// <param name="expectedx1"></param>
+        /// <param name="expectedy1"></param>
+        /// <param name="expectedx2"></param>
+        /// <param name="expectedy2"></param>
+        /// <param name="expectedx3"></param>
+        /// <param name="expectedy3"></param>
+        [Theory]
+        // Instructor Data
+        [InlineData(3, -1, -4, 5, 2, 3, 25, 3.1415, 0.3615, -5.7383, 2.8411, 0.5448, 3.5642)]
+        // Student Data
+        public void TestRotation2D(
+            double x1, double y1, double x2, double y2, double x3, double y3, double degrees,
+            double expectedx1, double expectedy1,
+            double expectedx2, double expectedy2,
+            double expectedx3, double expectedy3)
+        {
+            // Arrange - get data to do the test
+
+            // Act - performing the action
+
+            // Assert - did we get back the correct answer
+
+        }
+        #endregion
 
 
         //#region 3D Rotation
@@ -317,7 +352,7 @@ namespace Engine.Specs
         //            0.2549, 0.9513, -0.1736, 0,
         //            -0.0394, 0.1897, 0.9811, 0,
         //            0, 0, 0, 1)
-                
+
         //    };
         //    // Student Data
 
@@ -357,9 +392,9 @@ namespace Engine.Specs
         //{
         //    // Arrange - get data to do the test
         //    // Act - performing the action
-            
+
         //    // Assert - did we get back the correct answer
-            
+
         //}
 
         //[Theory]
@@ -369,9 +404,9 @@ namespace Engine.Specs
         //    // Arrange - get data to do the test
         //    // This method uses MemberData
         //    // Act - performing the action
-            
+
         //    // Assert - did we get back the correct answer
-            
+
         //}
 
         //[Theory]
@@ -381,9 +416,9 @@ namespace Engine.Specs
         //    // Arrange - get data to do the test
         //    // This method uses MemberData
         //    // Act - performing the action
-           
+
         //    // Assert - did we get back the correct answer
-            
+
         //}
 
         //[Theory]
@@ -395,11 +430,11 @@ namespace Engine.Specs
         //    double expectedRoll, double expectedPitch, double expectedYaw)
         //{
         //    // Arrange - get data to do the test
-           
+
         //    // Act - performing the action
-            
+
         //    // Assert - did we get back the correct answer
-           
+
         //}
         //#endregion
     }

@@ -33,15 +33,6 @@
             </summary>
             <returns>A List of Objects</returns>
         </member>
-        <member name="M:Engine.Specs.EngineTester.TestMidPoint(Engine.Classes.Eng_Point2D,Engine.Classes.Eng_Point2D,Engine.Classes.Eng_Point2D)">
-            <summary>
-            This test test the calcualtion of the midpoint, as a Eng_Point2D type, between
-            two Eng_Point2D points. The test data for this test comes from "MidPointData".
-            </summary>
-            <param name="givenA">Eng_Point2D: test point A</param>
-            <param name="givenB">Eng_Point2D: test point B</param>
-            <param name="expected">Expected, calculated, midpoint, a Eng_Point2D point, between test points A and B</param>
-        </member>
         <member name="T:Engine.Specs.Lab1Tester">
             <summary>
             Test Calculator
