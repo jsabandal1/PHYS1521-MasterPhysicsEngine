@@ -85,7 +85,7 @@ namespace Engine
             double adjacent;
             double hypotenuse;
 
-            adjacent = Math.Round(Math.Tan(DegreeToRadians(degreeAngle)) * opposite, 4);
+            adjacent = (Math.Tan(DegreeToRadians(degreeAngle)) * opposite);
             hypotenuse = Math.Round(Math.Sin(DegreeToRadians(degreeAngle)) * adjacent, 4);
 
             return new Tuple<double, double>(adjacent, hypotenuse);
@@ -310,6 +310,21 @@ namespace Engine
         }
 
         /// <summary>
+        /// Multiplication of a 3x3 vector to a 3x3matrix
+        /// </summary>
+        /// <param name="vector"></param>
+        /// <param name="matrix"></param>
+        /// <returns></returns>
+        public static Eng_Vector3D MultiplyVectorMatrix3x3(Eng_Vector3D vector, Eng_Matrix3x3 matrix)
+        {
+
+            return new Eng_Vector3D /*this is X*/((matrix.m11 * vector.x) + (matrix.m12 * vector.y) + (matrix.m13 * vector.z), 
+                                    /*this is Y*/ (matrix.m21 * vector.x) + (matrix.m22 * vector.y) + (matrix.m23 * vector.z),
+                                    /*this is Z*/ (matrix.m31 * vector.x) + (matrix.m32 * vector.y) + (matrix.m33 * vector.z));
+
+        }
+
+        /// <summary>
         /// multiplying two 4x4 matrix 
         /// </summary>
         /// <param name="first"></param>
@@ -405,6 +420,11 @@ namespace Engine
         #endregion
 
         #region 2D Rotations
+        /// <summary>
+        /// Rotation Matrix of two 2D point
+        /// </summary>
+        /// <param name="degree"></param>
+        /// <returns></returns>
         public static Eng_Matrix3x3 RotationMatrix(double degree)
         {
             return new Eng_Matrix3x3(Math.Cos(DegreeToRadians(degree)), -Math.Sin(DegreeToRadians(degree)), 0, Math.Sin(DegreeToRadians(degree)), Math.Cos(DegreeToRadians(degree)), 0, 0, 0, 1);

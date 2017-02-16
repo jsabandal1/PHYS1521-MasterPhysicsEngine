@@ -48,6 +48,70 @@
             This class represents a 3x3  matrix
             </summary>
         </member>
+        <member name="P:Engine.Classes.Eng_Matrix3x3.m11">
+            <summary>
+            row 1 column 1
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix3x3.m12">
+            <summary>
+            row 1 column 2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix3x3.m13">
+            <summary>
+            row 1 column 3
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix3x3.m21">
+            <summary>
+            row 2 column 1
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix3x3.m22">
+            <summary>
+            row 2 column 2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix3x3.m23">
+            <summary>
+            row 2 column 3
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix3x3.m31">
+            <summary>
+            row 3 column 1
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix3x3.m32">
+            <summary>
+            row 3 column 2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Matrix3x3.m33">
+            <summary>
+            row 3 column 3
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Matrix3x3.#ctor">
+            <summary>
+            empty constructor
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Matrix3x3.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            3x3 Matrix
+            </summary>
+            <param name="m11"></param>
+            <param name="m12"></param>
+            <param name="m13"></param>
+            <param name="m21"></param>
+            <param name="m22"></param>
+            <param name="m23"></param>
+            <param name="m31"></param>
+            <param name="m32"></param>
+            <param name="m33"></param>
+        </member>
         <member name="T:Engine.Classes.Eng_Matrix4x4">
             <summary>
             This class represents a 4x4  matrix
@@ -504,6 +568,14 @@
             <param name="matrix"></param>
             <returns></returns>
         </member>
+        <member name="M:Engine.Calculator.MultiplyVectorMatrix3x3(Engine.Classes.Eng_Vector3D,Engine.Classes.Eng_Matrix3x3)">
+            <summary>
+            Multiplication of a 3x3 vector to a 3x3matrix
+            </summary>
+            <param name="vector"></param>
+            <param name="matrix"></param>
+            <returns></returns>
+        </member>
         <member name="M:Engine.Calculator.MultiplyTwo4x4Matrix(Engine.Classes.Eng_Matrix4x4,Engine.Classes.Eng_Matrix4x4)">
             <summary>
             multiplying two 4x4 matrix 
@@ -531,6 +603,13 @@
             inverse of a 4x4 matrix
             </summary>
             <param name="m"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.RotationMatrix(System.Double)">
+            <summary>
+            Rotation Matrix of two 2D point
+            </summary>
+            <param name="degree"></param>
             <returns></returns>
         </member>
         <member name="T:Engine.Validator">

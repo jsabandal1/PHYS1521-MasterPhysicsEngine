@@ -299,5 +299,23 @@
             <param name="given"></param>
             <param name="expected"></param>
         </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestRotation2D(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            testrotation
+            </summary>
+            <param name="x1"></param>
+            <param name="y1"></param>
+            <param name="x2"></param>
+            <param name="y2"></param>
+            <param name="x3"></param>
+            <param name="y3"></param>
+            <param name="degrees"></param>
+            <param name="expectedx1"></param>
+            <param name="expectedy1"></param>
+            <param name="expectedx2"></param>
+            <param name="expectedy2"></param>
+            <param name="expectedx3"></param>
+            <param name="expectedy3"></param>
+        </member>
     </members>
 </doc>

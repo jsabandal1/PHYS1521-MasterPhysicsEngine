@@ -55,12 +55,12 @@ namespace Engine.Specs
         public void TestCalculateAdjacentHypotenuse(double degrees, double opposite, double adjacent, double hypotenuse)
         {
             // Arrange - get data to do the test
-            Tuple<double, double> expected = new Tuple<double, double>(Math.Round(adjacent, 4), Math.Round(hypotenuse, 4));
+            Tuple<double, double> expected = new Tuple<double, double>(adjacent, hypotenuse);
             // Act - performing the action
             Tuple<double, double> results = Calculator.AdjAndHypo(Math.Round(degrees, 4), Math.Round(opposite, 4));
             // Assert - did we get back the correct answer
-            Assert.Equal(expected, results);
-
+            Assert.Equal(expected.Item1,Math.Round(results.Item1,4));
+            Assert.Equal(expected.Item2, Math.Round(results.Item2,4));
         }
         /// <summary>
         /// Test the calculation for the opposite and hypotenuse

@@ -324,7 +324,25 @@ namespace Engine.Specs
             double expectedx3, double expectedy3)
         {
             // Arrange - get data to do the test
+            Eng_Matrix3x3 m = Calculator.RotationMatrix(25);
 
+            Eng_Vector3D first = new Eng_Vector3D(x1, y1, 1);
+            Eng_Vector3D second = new Eng_Vector3D(x2, y2, 1);
+            Eng_Vector3D third = new Eng_Vector3D(x3, y3, 1);
+
+
+            Eng_Vector3D result1 = Calculator.MultiplyVectorMatrix3x3(first, m);
+            Eng_Vector3D result2 = Calculator.MultiplyVectorMatrix3x3(second, m);
+            Eng_Vector3D result3 = Calculator.MultiplyVectorMatrix3x3(third, m);
+
+            Assert.Equal(expectedx1, Math.Round(result1.x,4));
+            Assert.Equal(expectedy1, Math.Round(result1.y, 4));
+
+            Assert.Equal(expectedx2, Math.Round(result2.x, 4));
+            Assert.Equal(expectedy2, Math.Round(result2.y, 4));
+
+            Assert.Equal(expectedx3, Math.Round(result3.x, 4));
+            Assert.Equal(expectedy3, Math.Round(result3.y, 4));
             // Act - performing the action
 
             // Assert - did we get back the correct answer
