@@ -419,7 +419,11 @@ namespace Engine.Specs
             // Act - performing the action
             Eng_Vector3D result = Calculator.SurfaceNormalOfA3DVector(givenA);
             // Assert - did we get back the correct answer
-            Assert.Equal(expected, result);
+            
+            Assert.Equal(expected.magnitude, result.magnitude);
+            Assert.Equal(expected.x, result.x);
+            Assert.Equal(expected.y, result.y);
+            Assert.Equal(expected.z, result.z);
         }
 
 

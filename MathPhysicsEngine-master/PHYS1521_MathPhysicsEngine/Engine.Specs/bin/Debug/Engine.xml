@@ -298,6 +298,55 @@
             This class represents a Quaternion using z-axis heading
             </summary>
         </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.x">
+            <summary>
+            x coordinate of the 3D vector
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.y">
+            <summary>
+            y coordinate of the 3D vector
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.z">
+            <summary>
+            z coordinate of the 3D vecotr
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.w">
+            <summary>
+            W property of the quaternion
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.angle">
+            <summary>
+            angle property of quaternion
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Quaternion.#ctor">
+            <summary>
+            empty Eng_Vector3D constructor
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Quaternion.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="z"></param>
+            <param name="w"></param>
+        </member>
+        <member name="M:Engine.Classes.Eng_Quaternion.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            constructor that accepts rotation angle
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="z"></param>
+            <param name="w"></param>
+            <param name="rotationAngle"></param>
+        </member>
         <member name="T:Engine.Classes.Eng_Sphere">
             <summary>
             This class represents a Sphere for mathematical calculations.
