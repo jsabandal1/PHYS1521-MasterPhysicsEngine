@@ -478,9 +478,12 @@ namespace Engine.Specs
             // Act - performing the action
             double result = Calculator.AngleBetweenTwo3DVectors(first, second);
             // Assert - did we get back the correct answer
-            Assert.Equal(expected, result);
+
+
+            Assert.Equal(expected, result);-
 
         }
+
 
 
         /// <summary>

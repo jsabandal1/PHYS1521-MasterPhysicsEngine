@@ -74,9 +74,15 @@ namespace Engine.Classes
             this.w = w;
 
 
-            double r = Math.Sin(Calculator.DegreeToRadians(rotationAngle)) / 2;
-            double p = Math.Cos(Calculator.DegreeToRadians(rotationAngle)) / 2;
-            double h = Math.Sin(Calculator.DegreeToRadians(rotationAngle)) / 2;
+           
+
+
+        }
+        internal void SolveRotation()
+        {
+            double roll = Math.Sin(Calculator.DegreeToRadians(angle)) / 2;
+            double pitch = Math.Cos(Calculator.DegreeToRadians(angle)) / 2;
+            double heading = Math.Sin(Calculator.DegreeToRadians(angle)) / 2;
         }
     }
 }
