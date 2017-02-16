@@ -86,8 +86,8 @@ namespace Engine
             double hypotenuse;
 
             adjacent = (Math.Tan(DegreeToRadians(degreeAngle)) * opposite);
-            hypotenuse = Math.Round(Math.Sin(DegreeToRadians(degreeAngle)) * adjacent, 4);
-
+            //hypotenuse = Math.Round(Math.Sin(DegreeToRadians(degreeAngle)) * adjacent, 4);
+            hypotenuse = opposite / (Math.Sin(DegreeToRadians( degreeAngle)));
             return new Tuple<double, double>(adjacent, hypotenuse);
         }
 

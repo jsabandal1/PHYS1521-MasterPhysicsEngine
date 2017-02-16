@@ -51,7 +51,7 @@ namespace Engine.Specs
         // Instructor Data
         [InlineData(25, 6, 12.867, 14.1972)]
         // Student Data
-        [InlineData(70.0169, 4, 11, 11.7047)]
+        [InlineData(70.0169, 4, 11, 4.2563)]
         public void TestCalculateAdjacentHypotenuse(double degrees, double opposite, double adjacent, double hypotenuse)
         {
             // Arrange - get data to do the test
