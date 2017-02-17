@@ -12,6 +12,38 @@ namespace Engine.Classes
     public class Eng_Quaternion
     {
         /// <summary>
+        /// roll cos  roll angle/2
+        /// </summary>
+        public double c1 { get; set; }
+
+        /// <summary>
+        /// pitch cos pitch angle/2
+        /// </summary>
+        public double c2 { get; set; }
+
+        /// <summary>
+        /// yaw cos yaw-angle/2
+        /// </summary>
+        public double c3 { get; set; }
+
+        /// <summary>
+        /// roll sin roll angle/2
+        /// </summary>
+        public double s1 { get; set; }
+
+        /// <summary>
+        /// pitch cos pitch-angle/2
+        /// </summary>
+        public double s2 { get; set; }
+
+        /// <summary>
+        /// yaw siin yaw-angle/2
+        /// </summary>
+        public double s3 { get; set; }
+
+
+
+        /// <summary>
         /// x coordinate of the 3D vector
         /// </summary>
         public double x { get; set; }
@@ -34,7 +66,17 @@ namespace Engine.Classes
         /// <summary>
         /// angle property of quaternion
         /// </summary>
-        public double angle { get; set; }
+        public double Rollangle { get; set; }
+
+        /// <summary>
+        /// angle property of quaternion
+        /// </summary>
+        public double Pitchangle { get; set; }
+
+        /// <summary>
+        /// angle property of quaternion
+        /// </summary>
+        public double Yawangle { get; set; }
 
         /// <summary>
         /// empty Eng_Vector3D constructor
@@ -43,46 +85,42 @@ namespace Engine.Classes
 
 
         /// <summary>
-        /// 
+        /// Greedy Constructor that accepts x,y,z,w
         /// </summary>
+        /// <param name="w"></param>
         /// <param name="x"></param>
         /// <param name="y"></param>
         /// <param name="z"></param>
-        /// <param name="w"></param>
-        public Eng_Quaternion(double x, double y, double z, double w)
+        public Eng_Quaternion(double w, double x, double y, double z)
         {
+            this.w = w;
             this.x = x;
             this.y = y;
             this.z = z;
-            this.w = w;
-            
         }
 
         /// <summary>
-        /// constructor that accepts rotation angle
+        /// Greedy constructor that accepts the roll/pitch/yaw angles
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="z"></param>
-        /// <param name="w"></param>
-        /// <param name="rotationAngle"></param>
-        public Eng_Quaternion(double x, double y, double z, double w, double rotationAngle)
+        /// <param name="roll"></param>
+        /// <param name="pitch"></param>
+        /// <param name="yaw"></param>
+        public Eng_Quaternion( double yaw, double pitch, double roll)
+
         {
-            this.x = x;
-            this.y = y;
-            this.z = z;
-            this.w = w;
-
-
-           
-
-
+            Rollangle = roll;
+            Pitchangle = pitch;
+            Yawangle = yaw;
         }
         internal void SolveRotation()
         {
-            double roll = Math.Sin(Calculator.DegreeToRadians(angle)) / 2;
-            double pitch = Math.Cos(Calculator.DegreeToRadians(angle)) / 2;
-            double heading = Math.Sin(Calculator.DegreeToRadians(angle)) / 2;
+            c1 = Math.Cos(Calculator.DegreeToRadians(Rollangle) / 2);
+            c2 = Math.Cos(Calculator.DegreeToRadians(Pitchangle) / 2);
+            c3 = Math.Cos(Calculator.DegreeToRadians(Yawangle) / 2);
+
+            s1 = Math.Sin(Calculator.DegreeToRadians(Rollangle) / 2);
+            s2 = Math.Sin(Calculator.DegreeToRadians(Pitchangle) / 2);
+            s3 = Math.Sin(Calculator.DegreeToRadians(Yawangle) / 2);
         }
     }
 }
