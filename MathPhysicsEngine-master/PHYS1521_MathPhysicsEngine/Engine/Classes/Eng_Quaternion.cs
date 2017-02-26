@@ -64,21 +64,6 @@ namespace Engine.Classes
         public double w { get; set; }
 
         /// <summary>
-        /// angle property of quaternion
-        /// </summary>
-        public double Rollangle { get; set; }
-
-        /// <summary>
-        /// angle property of quaternion
-        /// </summary>
-        public double Pitchangle { get; set; }
-
-        /// <summary>
-        /// angle property of quaternion
-        /// </summary>
-        public double Yawangle { get; set; }
-
-        /// <summary>
         /// empty Eng_Vector3D constructor
         /// </summary>
         public Eng_Quaternion() { }
@@ -108,19 +93,18 @@ namespace Engine.Classes
         public Eng_Quaternion( double yaw, double pitch, double roll)
 
         {
-            Rollangle = roll;
-            Pitchangle = pitch;
-            Yawangle = yaw;
-        }
-        internal void SolveRotation()
-        {
-            c1 = Math.Cos(Calculator.DegreeToRadians(Rollangle) / 2);
-            c2 = Math.Cos(Calculator.DegreeToRadians(Pitchangle) / 2);
-            c3 = Math.Cos(Calculator.DegreeToRadians(Yawangle) / 2);
+            c1 = Math.Cos(Calculator.DegreeToRadians(yaw) / 2);
+            c2 = Math.Cos(Calculator.DegreeToRadians(pitch) / 2);
+            c3 = Math.Cos(Calculator.DegreeToRadians(roll) / 2);
 
-            s1 = Math.Sin(Calculator.DegreeToRadians(Rollangle) / 2);
-            s2 = Math.Sin(Calculator.DegreeToRadians(Pitchangle) / 2);
-            s3 = Math.Sin(Calculator.DegreeToRadians(Yawangle) / 2);
+            s1 = Math.Sin(Calculator.DegreeToRadians(yaw) / 2);
+            s2 = Math.Sin(Calculator.DegreeToRadians(pitch) / 2);
+            s3 = Math.Sin(Calculator.DegreeToRadians(roll) / 2);
+
+            w = c1 * c2 * c3 + s1 * s2 * s3;
+            x = c1 * s2 * c3 + s1 * c2 * s3;
+            y = s1 * c2 * c3 - c1 * s2 * s3;
+            z = c1 * c2 * s3 - s1 * s2 * c3;
         }
     }
 }

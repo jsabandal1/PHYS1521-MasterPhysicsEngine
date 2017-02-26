@@ -11,7 +11,7 @@ namespace Engine.Specs
     /// <summary>
     /// Test Calculator
     /// </summary>
-    public class Lab1Tester
+ class Lab1Tester
     {
 
         #region Trig Test

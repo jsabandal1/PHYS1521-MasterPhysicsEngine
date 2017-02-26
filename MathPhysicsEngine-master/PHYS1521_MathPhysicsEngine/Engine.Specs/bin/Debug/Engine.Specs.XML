@@ -323,5 +323,38 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="M:Engine.Specs.Lab2Tester.Rotate3DData">
+            <summary>
+            rotate 3D vector
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestQuaternion(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            test quaternion
+            </summary>
+            <param name="bank"></param>
+            <param name="attitude"></param>
+            <param name="heading"></param>
+            <param name="expectedQw"></param>
+            <param name="expectedQx"></param>
+            <param name="expectedQy"></param>
+            <param name="expectedQz"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestQuaternionToMatrix(Engine.Classes.Eng_Quaternion,Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            test quaternion to matrix
+            </summary>
+            <param name="q"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestRotate3D(Engine.Classes.Eng_Vector4D,Engine.Classes.Eng_Quaternion,Engine.Classes.Eng_Vector4D)">
+            <summary>
+            test 3d rotation
+            </summary>
+            <param name="v"></param>
+            <param name="q"></param>
+            <param name="expected"></param>
+        </member>
     </members>
 </doc>

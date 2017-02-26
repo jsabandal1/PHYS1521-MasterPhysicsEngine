@@ -440,10 +440,36 @@ namespace Engine
         /// <returns></returns>
         public static Eng_Matrix4x4 QuaternionToMatrixConversion(Eng_Quaternion quat)
         {
-            return new Eng_Matrix4x4(1 - (2 * (Math.Pow(quat.y, 2) + Math.Pow(quat.z, 2))), 2 * (quat.x * quat.y - quat.w * quat.z), 2 * (quat.x * quat.z + quat.w * quat.y),0,
-                                     2 * (quat.x * quat.y + quat.w * quat.z), 1 - 2 * (Math.Pow(quat.x, 2) + Math.Pow(quat.z, 2)), 2 * (quat.y * quat.z - quat.w * quat.x),0,
-                                     2 * (quat.x * quat.z - quat.w * quat.y), 2 * (quat.y * quat.z + quat.w * quat.x), 1 - 2 * (Math.Pow(quat.x, 2) + Math.Pow(quat.y, 2)),0,
-                                     0,0,0,1);
+            return new Eng_Matrix4x4
+                 (1 - (2 * (Math.Pow(quat.y, 2) + Math.Pow(quat.z, 2))),
+                 2 * (quat.x * quat.y - quat.w * quat.z),
+                 2 * (quat.x * quat.z + quat.w * quat.y)
+                 ,0,
+                 2 * (quat.x * quat.y + quat.w * quat.z),
+                 1 - 2 * (Math.Pow(quat.x, 2) + Math.Pow(quat.z, 2)),
+                 2 * (quat.y * quat.z - quat.w * quat.x),
+                 0,
+                 2 * (quat.x * quat.z - quat.w * quat.y),
+                 2 * (quat.y * quat.z + quat.w * quat.x),
+                 1 - 2 * (Math.Pow(quat.x, 2) + Math.Pow(quat.y, 2)),
+                 0,
+                 0,0,0,1);
+        }
+
+        /// <summary>
+        /// quaternion to euler
+        /// </summary>
+        /// <param name="q"></param>
+        /// <returns></returns>
+        public static Tuple<double, double, double> CalculateEulerFromQuaternion(Eng_Quaternion q)
+        {
+            //𝑃 = sin−1(−2(𝑄𝑦𝑄𝑧 − 𝑄𝑤𝑄𝑥)) 
+            double pitch =RadiansToDegree( Math.Asin(-2 * (q.y * q.z - q.w * q.x)));
+            double yaw = RadiansToDegree( Math.Atan((2 * (q.x * q.z + q.w * q.y ))/ (1 - 2 * (Math.Pow(q.x, 2) + Math.Pow(q.y, 2)))));
+            double roll = RadiansToDegree(Math.Atan((2 * (q.x * q.y + q.w * q.z)) / (1 - 2 * (Math.Pow(q.x, 2) + Math.Pow(q.y, 2)))));
+
+            return new Tuple<double, double, double>(pitch, yaw, roll);
+                
         }
         #endregion
     }

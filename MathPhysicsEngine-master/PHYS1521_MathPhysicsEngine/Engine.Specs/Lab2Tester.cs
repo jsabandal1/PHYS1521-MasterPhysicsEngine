@@ -45,6 +45,29 @@ namespace Engine.Specs
             };
             // Student Data
 
+            yield return new Object[]
+            {
+                // Test Datais:
+                //   Matrix A
+                //   Matrix B
+                //   Expected = A x B
+                new Eng_Matrix4x4(
+                     2, 0.5, 1, 0,
+                     2, 3, 0.5, 1,
+                     5, 1, 0, 2,
+                     0, 0, 1, 2),
+                new Eng_Matrix4x4(
+                    3, 2.5, 1, 0,
+                    2, 1, 5, 2,
+                    0, 0, 0, 1,
+                    4, 3, 2, 1),
+                new Eng_Matrix4x4(
+                    7, 5.5, 4.5, 2,
+                    16, 11, 19, 7.5,
+                    25, 19.5, 14, 4,
+                    8, 6, 4, 3)
+            };
+
         }
 
         /// <summary>
@@ -68,7 +91,22 @@ namespace Engine.Specs
                 new Eng_Vector4D(-2, 3, -5, 1),
                 new Eng_Vector4D(-3.5, -4.5, -13, 1)
             };
+            
             // Student Data
+            yield return new Object[]
+            {
+                // Test Data is:
+                //   Matrix M
+                //   Vector V
+                //   Expected = M x V
+                new Eng_Matrix4x4(
+                    1, 0, 2, 0,
+                    2, 2, 1, 0,
+                    4, 3, 1, 0,
+                    0, 0, 0, 1),
+                new Eng_Vector4D(1, 2, 3, 1),
+                new Eng_Vector4D(7, 9, 13, 1)
+            };
 
         }
 
@@ -95,9 +133,24 @@ namespace Engine.Specs
                    0, 0, 3, 0,
                    0.5, 1.5, 2, 1)
             };
-            // Student Data
+            yield return new Object[]
+            {
+            // Student Data 
+            //   Matrix M
+            //   Expected = M^T
+            new Eng_Matrix4x4(
+                0, 2, 3, 1,
+                0, 4, 3, 1,
+                2, 0.5, 1.5, 0,
+                0, 2, 1.5, 1),
+               new Eng_Matrix4x4(
+                   0, 0, 2, 0, 
+                   2, 4, 0.5, 2,
+                   3, 3, 1.5, 1.5,
+                   1, 1, 0, 1)
+            };
 
-        }
+    }
 
         /// <summary>
         /// inverse matrix data
@@ -122,7 +175,22 @@ namespace Engine.Specs
                    0, 0, 0.3333, -0.6667,
                    0, 0, 0, 1)
             };
-            // Student Data
+            // Student Data 
+            yield return new Object[]
+{
+                // Test Data is:
+                //   Matrix M
+                //   Expected = M^-1
+                new Eng_Matrix4x4(
+                     2, 4, 0, 0,
+                     0, 2, 0, 0,  
+                     4, 0, 2, 0,
+                     0, 0, 0, 1),
+               new Eng_Matrix4x4(
+                   0.5, -1, 0, 0,
+                   0, 0.5, 0, 0, 
+                   -1, 2, 0.5, 0,
+                   0, 0, 0, 1)};
 
         }
 
@@ -239,7 +307,8 @@ namespace Engine.Specs
         [Theory]
         // Instructor Data
         [InlineData(2, 0, 0, 0.5, 0, -2, 0, 1.5, 0, 0, 3, 2, 0, 0, 0, 1, -12)]
-        // Student Data
+        // Student Data 1 2 2 0 4 1.5 3 0 1 0 1 0 0 0 0 1
+        [InlineData(1, 2, 2, 0, 4, 1.5, 3, 0, 1, 0, 1, 0, 0, 0, 0, 1, -1.5)]
         public void TestDeterminant4(
             double m11, double m12, double m13, double m14,
             double m21, double m22, double m23, double m24,
@@ -252,7 +321,7 @@ namespace Engine.Specs
              m21, m22, m23, m24,
              m31, m32, m33, m34,
              m41, m42, m43, m44);
-            double result = Calculator.CalculateDeterminant4x4(givenMatrix);
+            double result =Math.Round( Calculator.CalculateDeterminant4x4(givenMatrix),2);
             Assert.Equal(expected, result);     
         }
 
@@ -316,7 +385,8 @@ namespace Engine.Specs
         [Theory]
         // Instructor Data
         [InlineData(3, -1, -4, 5, 2, 3, 25, 3.1415, 0.3615, -5.7383, 2.8411, 0.5448, 3.5642)]
-        // Student Data
+        // Student Data 
+       [InlineData(2, 3, -1, 1, 3, -2, 15, 0.5448, 3.5642, -1.3289, 0.4837, 3.5642, -0.5448)]
         public void TestRotation2D(
             double x1, double y1, double x2, double y2, double x3, double y3, double degrees,
             double expectedx1, double expectedy1,
@@ -376,45 +446,67 @@ namespace Engine.Specs
 
         }
 
-        ///// <summary>
-        ///// rotate 3D vector
-        ///// </summary>
-        ///// <returns></returns>
-        //public static IEnumerable<Object[]> Rotate3DData()
-        //{
+        /// <summary>
+        /// rotate 3D vector
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<Object[]> Rotate3DData()
+        {
 
-        //    // Instructor Data
-        //    yield return new Object[]
-        //    {
-        //        // Test Data is:
-        //        //   Vector V
-        //        //   Quaternion V
-        //        //   Expected = Q x V, converting Q to Matrix R,
-        //        //            = R x V 
-        //        new Eng_Vector4D(-2, 5, 3, 1),
-        //        new Eng_Quaternion(15, 10, 5),
-        //        new Eng_Vector4D(-2.8909, 3.7255, 3.9703, 1)
+            // Instructor Data
+            yield return new Object[]
+            {
+                // Test Data is:
+                //   Vector V
+                //   Quaternion V
+                //   Expected = Q x V, converting Q to Matrix R,
+                //            = R x V 
+                new Eng_Vector4D(-2, 5, 3, 1),
+                new Eng_Quaternion(15, 10, 5),
+                new Eng_Vector4D(-2.8909, 3.7255, 3.9703, 1)
 
-        //    };
-        //    // Student Data
-        //}
+            };
+            // Student Data
+        }
 
-        //[Theory]
-        //// Instructor Data
-        //[InlineData(15, 10, 5, 0.987228288176272, 0.0919996771632968, 0.0317163728481948, 0.126136585175556)]
-        //// Student Data
 
-        //public void TestQuaternion(
-        //    double bank, double attitude, double heading,
-        //    double expectedQw, double expectedQx, double expectedQy, double expectedQz)
-        //{
-        //    // Arrange - get data to do the test
-        //    // Act - performing the action
+        /// <summary>
+        /// test quaternion
+        /// </summary>
+        /// <param name="bank"></param>
+        /// <param name="attitude"></param>
+        /// <param name="heading"></param>
+        /// <param name="expectedQw"></param>
+        /// <param name="expectedQx"></param>
+        /// <param name="expectedQy"></param>
+        /// <param name="expectedQz"></param>
+        [Theory]
+        // Instructor Data
+        [InlineData(15, 10, 5, 0.987228288176272, 0.0919996771632968, 0.0317163728481948, 0.126136585175556)]
+        // Student Data
+        [InlineData(15, 15, 25, 0.95598, 0.15435, 0.22939, 0.09833)]
+        public void TestQuaternion(
+            double bank, double attitude, double heading,
+            double expectedQw, double expectedQx, double expectedQy, double expectedQz)
+        {
+            // Arrange - get data to do the test
+            // yaw pitch roll bank z 15 / att x 15 / yaw y 25
+            Eng_Quaternion q = new Eng_Quaternion(heading, attitude, bank);
 
-        //    // Assert - did we get back the correct answer
+            // Act - performing the action
+            Assert.Equal(Math.Round(expectedQw,15), Math.Round(q.w, 15));
+            Assert.Equal(Math.Round(expectedQx, 15), Math.Round(q.x, 15));
+            Assert.Equal(Math.Round(expectedQy, 15), Math.Round(q.y, 15));
+            Assert.Equal(Math.Round(expectedQz, 15), Math.Round(q.z, 15));
+            // Assert - did we get back the correct answer
 
-        //}
+        }
 
+        /// <summary>
+        /// test quaternion to matrix
+        /// </summary>
+        /// <param name="q"></param>
+        /// <param name="expected"></param>
         [Theory]
         [MemberData("QuaternionToMatrixData")]
         public void TestQuaternionToMatrix(Eng_Quaternion q, Eng_Matrix4x4 expected)
@@ -427,7 +519,7 @@ namespace Engine.Specs
             // Act - performing the action
 
             // Assert - did we get back the correct answer
-            Assert.Equal(expected.m11, result.m11);
+            Assert.Equal(expected.m11,Math.Round(result.m11,4));
             Assert.Equal(expected.m12, result.m12);
             Assert.Equal(expected.m13, result.m13);
             Assert.Equal(expected.m14, result.m14);
@@ -448,33 +540,56 @@ namespace Engine.Specs
             Assert.Equal(expected.m44, result.m44);
         }
 
-        //[Theory]
-        //[MemberData("Rotate3DData")]
-        //public void TestRotate3D(Eng_Vector4D v, Eng_Quaternion q, Eng_Vector4D expected)
-        //{
-        //    // Arrange - get data to do the test
-        //    // This method uses MemberData
-        //    // Act - performing the action
 
-        //    // Assert - did we get back the correct answer
 
-        //}
+        /// <summary>
+        /// test 3d rotation
+        /// </summary>
+        /// <param name="v"></param>
+        /// <param name="q"></param>
+        /// <param name="expected"></param>
+        [Theory]
+        [MemberData("Rotate3DData")]
+        public void TestRotate3D(Eng_Vector4D v, Eng_Quaternion q, Eng_Vector4D expected)
+        {
+            Eng_Matrix4x4 r = Calculator.QuaternionToMatrixConversion(q);
+            Eng_Vector4D result = Calculator.MultiplyVectorMatrix(v, r);
+            // Assert - did we get back the correct answer
+            Assert.Equal(result.w, expected.w);
+            Assert.Equal(result.x, expected.x);
+            Assert.Equal(result.y, expected.y);
+            Assert.Equal(result.z, expected.z);
 
-        //[Theory]
-        //// Instructor Data
-        //[InlineData(0.987228288176272, 0.0919996771632968, 0.0317163728481948, 0.126136585175556, 15, 10, 5)]
-        //// Student Data
+            Assert.Equal( expected.w, result.w);
+            Assert.Equal(expected.x, result.x);
+            Assert.Equal(expected.y, result.y);
+            Assert.Equal(expected.z, result.z);
 
-        //public void TestQuaterionToEuler(double qW, double qX, double qY, double qZ,
-        //    double expectedRoll, double expectedPitch, double expectedYaw)
-        //{
-        //    // Arrange - get data to do the test
 
-        //    // Act - performing the action
+        }
 
-        //    // Assert - did we get back the correct answer
+        [Theory]
+        // Instructor Data
+        [InlineData(0.987228288176272, 0.0919996771632968, 0.0317163728481948, 0.126136585175556, 15, 10, 5)]
+        // Student Data
+        [InlineData(0.959, 0.162, 0.201, 0.116, 10, 17, 25)]
 
-        //}
+
+        public void TestQuaterionToEuler(double qW, double qX, double qY, double qZ,
+            double expectedRoll, double expectedPitch, double expectedYaw)
+        {
+            // Arrange - get data to do the test
+            Eng_Quaternion q = new Eng_Quaternion(qW, qX, qY, qZ);
+
+           Tuple<double, double, double> result = Calculator.CalculateEulerFromQuaternion(q);
+            Assert.Equal(expectedPitch, Math.Round(result.Item1,1));
+            Assert.Equal(expectedYaw, Math.Round(result.Item2), 1);
+            Assert.Equal(expectedRoll, Math.Round(result.Item3),1);
+            // Act - performing the action
+
+            // Assert - did we get back the correct answer
+
+        }
         #endregion
     }
 }

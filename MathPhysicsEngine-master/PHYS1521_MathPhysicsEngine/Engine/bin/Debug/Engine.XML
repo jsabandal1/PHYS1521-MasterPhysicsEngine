@@ -348,21 +348,6 @@
             W property of the quaternion
             </summary>
         </member>
-        <member name="P:Engine.Classes.Eng_Quaternion.Rollangle">
-            <summary>
-            angle property of quaternion
-            </summary>
-        </member>
-        <member name="P:Engine.Classes.Eng_Quaternion.Pitchangle">
-            <summary>
-            angle property of quaternion
-            </summary>
-        </member>
-        <member name="P:Engine.Classes.Eng_Quaternion.Yawangle">
-            <summary>
-            angle property of quaternion
-            </summary>
-        </member>
         <member name="M:Engine.Classes.Eng_Quaternion.#ctor">
             <summary>
             empty Eng_Vector3D constructor
@@ -704,6 +689,13 @@
             quternion to matrix conversion
             </summary>
             <param name="quat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.CalculateEulerFromQuaternion(Engine.Classes.Eng_Quaternion)">
+            <summary>
+            quaternion to euler
+            </summary>
+            <param name="q"></param>
             <returns></returns>
         </member>
         <member name="T:Engine.Validator">
