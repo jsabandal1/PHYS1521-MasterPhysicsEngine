@@ -317,5 +317,11 @@
             <param name="expectedx3"></param>
             <param name="expectedy3"></param>
         </member>
+        <member name="M:Engine.Specs.Lab2Tester.QuaternionToMatrixData">
+            <summary>
+            test quaternion to matrix
+            </summary>
+            <returns></returns>
+        </member>
     </members>
 </doc>

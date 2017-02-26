@@ -351,30 +351,30 @@ namespace Engine.Specs
         #endregion
 
 
-        //#region 3D Rotation
-        ///// <summary>
-        ///// test quaternion to matrix
-        ///// </summary>
-        ///// <returns></returns>
-        //public static IEnumerable<Object[]> QuaternionToMatrixData()
-        //{
-        //    // Instructor Data
-        //    yield return new Object[]
-        //    {
-        //        // Test Data is:
-        //        //   Quaternion Q
-        //        //   Expected = M
-        //        new Eng_Quaternion(15, 10, 5),
-        //        new Eng_Matrix4x4(
-        //            0.9662, -0.2432, 0.0858, 0,
-        //            0.2549, 0.9513, -0.1736, 0,
-        //            -0.0394, 0.1897, 0.9811, 0,
-        //            0, 0, 0, 1)
+        #region 3D Rotation
+        /// <summary>
+        /// test quaternion to matrix
+        /// </summary>
+        /// <returns></returns>
+        public static IEnumerable<Object[]> QuaternionToMatrixData()
+        {
+            // Instructor Data
+            yield return new Object[]
+            {
+                // Test Data is:
+                //   Quaternion Q
+                //   Expected = M
+                new Eng_Quaternion(15, 10, 5),
+                new Eng_Matrix4x4(
+                    0.9662, -0.2432, 0.0858, 0,
+                    0.2549, 0.9513, -0.1736, 0,
+                    -0.0394, 0.1897, 0.9811, 0,
+                    0, 0, 0, 1)
 
-        //    };
-        //    // Student Data
+            };
+            // Student Data
 
-        //}
+        }
 
         ///// <summary>
         ///// rotate 3D vector
@@ -415,17 +415,38 @@ namespace Engine.Specs
 
         //}
 
-        //[Theory]
-        //[MemberData("QuaternionToMatrixData")]
-        //public void TestQuaternionToMatrix(Eng_Quaternion q, Eng_Matrix4x4 expected)
-        //{
-        //    // Arrange - get data to do the test
-        //    // This method uses MemberData
-        //    // Act - performing the action
+        [Theory]
+        [MemberData("QuaternionToMatrixData")]
+        public void TestQuaternionToMatrix(Eng_Quaternion q, Eng_Matrix4x4 expected)
+        {
+            // Arrange - get data to do the test
+            Eng_Matrix4x4 result = Calculator.QuaternionToMatrixConversion(q);
 
-        //    // Assert - did we get back the correct answer
+            // This method uses MemberData
 
-        //}
+            // Act - performing the action
+
+            // Assert - did we get back the correct answer
+            Assert.Equal(expected.m11, result.m11);
+            Assert.Equal(expected.m12, result.m12);
+            Assert.Equal(expected.m13, result.m13);
+            Assert.Equal(expected.m14, result.m14);
+
+            Assert.Equal(expected.m21, result.m21);
+            Assert.Equal(expected.m22, result.m22);
+            Assert.Equal(expected.m23, result.m23);
+            Assert.Equal(expected.m24, result.m24);
+
+            Assert.Equal(expected.m31, result.m31);
+            Assert.Equal(expected.m32, result.m32);
+            Assert.Equal(expected.m33, result.m33);
+            Assert.Equal(expected.m34, result.m34);
+
+            Assert.Equal(expected.m41, result.m41);
+            Assert.Equal(expected.m42, result.m42);
+            Assert.Equal(expected.m43, result.m43);
+            Assert.Equal(expected.m44, result.m44);
+        }
 
         //[Theory]
         //[MemberData("Rotate3DData")]
@@ -454,7 +475,7 @@ namespace Engine.Specs
         //    // Assert - did we get back the correct answer
 
         //}
-        //#endregion
+        #endregion
     }
 }
 

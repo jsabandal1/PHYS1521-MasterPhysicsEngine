@@ -438,11 +438,12 @@ namespace Engine
         /// </summary>
         /// <param name="quat"></param>
         /// <returns></returns>
-        public static Eng_Matrix3x3 QuaternionToMatrixConversion(Eng_Quaternion quat)
+        public static Eng_Matrix4x4 QuaternionToMatrixConversion(Eng_Quaternion quat)
         {
-            return new Eng_Matrix3x3(1 - 2 * (Math.Pow(quat.y, 2) + Math.Pow(quat.z, 2)), 2 * (quat.x * quat.y - quat.w * quat.z), 2 * (quat.x * quat.z + quat.w * quat.y),
-                                     2 * (quat.x * quat.y + quat.w * quat.z), 1 - 2 * (Math.Pow(quat.x, 2) + Math.Pow(quat.z, 2)), 2 * (quat.y * quat.z - quat.w * quat.x),
-                                     2 * (quat.x * quat.z - quat.w * quat.y), 2 * (quat.y * quat.z + quat.w * quat.x), 1 - 2 * (Math.Pow(quat.x, 2) + Math.Pow(quat.y, 2)));
+            return new Eng_Matrix4x4(1 - (2 * (Math.Pow(quat.y, 2) + Math.Pow(quat.z, 2))), 2 * (quat.x * quat.y - quat.w * quat.z), 2 * (quat.x * quat.z + quat.w * quat.y),0,
+                                     2 * (quat.x * quat.y + quat.w * quat.z), 1 - 2 * (Math.Pow(quat.x, 2) + Math.Pow(quat.z, 2)), 2 * (quat.y * quat.z - quat.w * quat.x),0,
+                                     2 * (quat.x * quat.z - quat.w * quat.y), 2 * (quat.y * quat.z + quat.w * quat.x), 1 - 2 * (Math.Pow(quat.x, 2) + Math.Pow(quat.y, 2)),0,
+                                     0,0,0,1);
         }
         #endregion
     }

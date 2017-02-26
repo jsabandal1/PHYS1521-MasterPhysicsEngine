@@ -480,7 +480,7 @@ namespace Engine.Specs
             // Assert - did we get back the correct answer
 
 
-            Assert.Equal(expected, result);-
+            Assert.Equal(expected, result);
 
         }
 

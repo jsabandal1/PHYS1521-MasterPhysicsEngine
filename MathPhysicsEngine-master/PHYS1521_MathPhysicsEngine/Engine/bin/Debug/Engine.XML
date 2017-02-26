@@ -298,6 +298,36 @@
             This class represents a Quaternion using z-axis heading
             </summary>
         </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.c1">
+            <summary>
+            roll cos  roll angle/2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.c2">
+            <summary>
+            pitch cos pitch angle/2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.c3">
+            <summary>
+            yaw cos yaw-angle/2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.s1">
+            <summary>
+            roll sin roll angle/2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.s2">
+            <summary>
+            pitch cos pitch-angle/2
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.s3">
+            <summary>
+            yaw siin yaw-angle/2
+            </summary>
+        </member>
         <member name="P:Engine.Classes.Eng_Quaternion.x">
             <summary>
             x coordinate of the 3D vector
@@ -318,7 +348,17 @@
             W property of the quaternion
             </summary>
         </member>
-        <member name="P:Engine.Classes.Eng_Quaternion.angle">
+        <member name="P:Engine.Classes.Eng_Quaternion.Rollangle">
+            <summary>
+            angle property of quaternion
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.Pitchangle">
+            <summary>
+            angle property of quaternion
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Quaternion.Yawangle">
             <summary>
             angle property of quaternion
             </summary>
@@ -330,22 +370,20 @@
         </member>
         <member name="M:Engine.Classes.Eng_Quaternion.#ctor(System.Double,System.Double,System.Double,System.Double)">
             <summary>
-            
+            Greedy Constructor that accepts x,y,z,w
             </summary>
+            <param name="w"></param>
             <param name="x"></param>
             <param name="y"></param>
             <param name="z"></param>
-            <param name="w"></param>
         </member>
-        <member name="M:Engine.Classes.Eng_Quaternion.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:Engine.Classes.Eng_Quaternion.#ctor(System.Double,System.Double,System.Double)">
             <summary>
-            constructor that accepts rotation angle
+            Greedy constructor that accepts the roll/pitch/yaw angles
             </summary>
-            <param name="x"></param>
-            <param name="y"></param>
-            <param name="z"></param>
-            <param name="w"></param>
-            <param name="rotationAngle"></param>
+            <param name="roll"></param>
+            <param name="pitch"></param>
+            <param name="yaw"></param>
         </member>
         <member name="T:Engine.Classes.Eng_Sphere">
             <summary>
@@ -659,6 +697,13 @@
             Rotation Matrix of two 2D point
             </summary>
             <param name="degree"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.QuaternionToMatrixConversion(Engine.Classes.Eng_Quaternion)">
+            <summary>
+            quternion to matrix conversion
+            </summary>
+            <param name="quat"></param>
             <returns></returns>
         </member>
         <member name="T:Engine.Validator">
