@@ -63,6 +63,7 @@
     <Compile Include="EngineTester.cs" />
     <Compile Include="Lab1Tester.cs" />
     <Compile Include="Lab2Tester.cs" />
+    <Compile Include="Lab3Tester.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

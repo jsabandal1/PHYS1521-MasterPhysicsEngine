@@ -567,14 +567,23 @@ namespace Engine.Specs
 
 
         }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="qW"></param>
+        /// <param name="qX"></param>
+        /// <param name="qY"></param>
+        /// <param name="qZ"></param>
+        /// <param name="expectedRoll"></param>
+        /// <param name="expectedPitch"></param>
+        /// <param name="expectedYaw"></param>
         [Theory]
         // Instructor Data
         [InlineData(0.987228288176272, 0.0919996771632968, 0.0317163728481948, 0.126136585175556, 15, 10, 5)]
         // Student Data
         [InlineData(0.959, 0.162, 0.201, 0.116, 10, 17, 25)]
 
-
+        
         public void TestQuaterionToEuler(double qW, double qX, double qY, double qZ,
             double expectedRoll, double expectedPitch, double expectedYaw)
         {
