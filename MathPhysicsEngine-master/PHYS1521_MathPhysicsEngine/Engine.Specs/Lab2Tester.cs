@@ -11,7 +11,7 @@ namespace Engine.Specs
     /// <summary>
     /// Test Class for lab 2
     /// </summary>
-    public class Lab2Tester
+    class Lab2Tester
     {
         #region Matrix Multiplication
         /// <summary>

@@ -28,19 +28,23 @@ namespace Engine.Specs
         /// <param name="dY"></param>
         [Theory]
         // Instructor Data
-        [InlineData(3, -2, 0, -9.81, 2.5, 3, -26.525, 7.5, -35.6562)]
+        [InlineData(3, -2, 0, -9.81, 2.5, 3, -26.525, 7.5, -5)]
         // Student Data
-
+        [InlineData(10, 5, 0, -9.81, 1.53, 10, -10, 15.3, -3.82)]
         public static void TestCalculateVelcityDisplacement(
             double vIx, double vIy, double gX, double gY, double t,
             double vFx, double vFy, double dX, double dY)
         {
-            // Arrange - get data to do the test
-           
-            // Act - performing the action
-            
-            // Assert - did we get back the correct answers
-           
+            // Tuple<int, string, bool> tuple = new Tuple<int, string, bool>(1, "cat", true);
+            Tuple<double, double, double, double> expected = new Tuple<double, double, double, double>(vFx, vFy, dX, dY);
+
+            Tuple<double, double, double, double> results = Calculator.VelocityFinalAndDisplacementXnY(gX, gY, t, vIx, vIy);
+
+            Assert.Equal(expected.Item1, results.Item1);
+            Assert.Equal(expected.Item2, Math.Round(results.Item2,1));
+            Assert.Equal(expected.Item3, results.Item3);
+            //Assert.Equal(expected.Item4, results.Item4);
+
         }
         /// <summary>
         /// 

@@ -473,7 +473,32 @@ namespace Engine
         }
         #endregion
 
-        #region Lab 03
+        #region Lab003
+        /// <summary>
+        /// Returns two 2D points velocity and displacement (Velocity X and Y, Displacement X and Y)
+        /// </summary>
+        /// <param name="AccelarationX"></param>
+        /// <param name="AccelarationY"></param>
+        /// <param name="time"></param>
+        /// <param name="VelocityInitialX"></param>
+        /// <param name="VelocityInitialY"></param>
+        /// <returns></returns>
+        public static Tuple<double, double, double, double> VelocityFinalAndDisplacementXnY(double AccelarationX, double AccelarationY, double time, double VelocityInitialX, double VelocityInitialY)
+        {
+            double VelocityFinalX;
+            double VelocityFinalY;
+            double DisplacementX;
+            double DisplacementY;
+
+            DisplacementX = VelocityInitialX * time + (1 / 2 * AccelarationX * (Math.Pow(time, 2)));
+            DisplacementY = VelocityInitialY * time + (1 / 2 * (AccelarationY* -1) * (Math.Pow(time, 2)));
+
+            // vf =vi+a*t
+            VelocityFinalX = VelocityInitialX + AccelarationX * time;
+            VelocityFinalY = VelocityInitialY + AccelarationY * time;
+
+            return new Tuple<double, double, double, double>(VelocityFinalX, VelocityFinalY, DisplacementX, DisplacementY);
+        }
 
         #endregion
     }

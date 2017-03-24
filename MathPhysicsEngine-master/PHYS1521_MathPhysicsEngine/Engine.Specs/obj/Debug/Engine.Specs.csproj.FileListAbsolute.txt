@@ -57,8 +57,6 @@ C:\Users\Allan\Desktop\GitHub\MathPhysicsEngine\PHYS1521_MathPhysicsEngine\Engin
 C:\Users\Allan\Desktop\GitHub\MathPhysicsEngine\PHYS1521_MathPhysicsEngine\Engine.Specs\obj\Debug\Engine.Specs.pdb
 C:\Users\Allan\Desktop\GitHub\MathPhysicsEngine\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\Engine.Specs.XML
 C:\Users\Allan\Desktop\GitHub\MathPhysicsEngine\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\Engine.xml
-C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.runner.visualstudio.testadapter.dll
-C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.runner.utility.desktop.dll
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.abstractions.dll
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\Engine.Specs.XML
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\Engine.Specs.dll
@@ -69,11 +67,8 @@ C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysics
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.execution.desktop.dll
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\Engine.pdb
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\Engine.xml
-C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.assert.pdb
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.assert.xml
-C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.core.pdb
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.core.xml
-C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.execution.desktop.pdb
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.execution.desktop.xml
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\obj\Debug\Engine.Specs.csprojResolveAssemblyReference.cache
 C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\obj\Debug\Engine.Specs.dll
@@ -141,3 +136,6 @@ C:\Users\jsabandal1\Desktop\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-maste
 C:\Users\jsabandal1\Desktop\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\obj\Debug\Engine.Specs.csprojResolveAssemblyReference.cache
 C:\Users\jsabandal1\Desktop\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\obj\Debug\Engine.Specs.dll
 C:\Users\jsabandal1\Desktop\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\obj\Debug\Engine.Specs.pdb
+C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.runner.visualstudio.testadapter.dll
+C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.runner.utility.net35.dll
+C:\Users\JoshChristian\Documents\GitHub\PHYS1521-MasterPhysicsEngine\MathPhysicsEngine-master\PHYS1521_MathPhysicsEngine\Engine.Specs\bin\Debug\xunit.runner.reporters.net452.dll

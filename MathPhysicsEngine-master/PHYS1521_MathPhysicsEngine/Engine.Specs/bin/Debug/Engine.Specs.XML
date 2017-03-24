@@ -356,5 +356,195 @@
             <param name="q"></param>
             <param name="expected"></param>
         </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestQuaterionToEuler(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="qW"></param>
+            <param name="qX"></param>
+            <param name="qY"></param>
+            <param name="qZ"></param>
+            <param name="expectedRoll"></param>
+            <param name="expectedPitch"></param>
+            <param name="expectedYaw"></param>
+        </member>
+        <member name="T:Engine.Specs.Lab3Tester">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateVelcityDisplacement(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="vIx"></param>
+            <param name="vIy"></param>
+            <param name="gX"></param>
+            <param name="gY"></param>
+            <param name="t"></param>
+            <param name="vFx"></param>
+            <param name="vFy"></param>
+            <param name="dX"></param>
+            <param name="dY"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateProjectile(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="vI"></param>
+            <param name="degrees"></param>
+            <param name="h"></param>
+            <param name="g"></param>
+            <param name="distance"></param>
+            <param name="maxHeight"></param>
+            <param name="t"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestRotationalMotion1(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="rpm"></param>
+            <param name="radius"></param>
+            <param name="omega"></param>
+            <param name="aT_Expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestRotationalMotion2(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="arc"></param>
+            <param name="radius"></param>
+            <param name="t"></param>
+            <param name="thetaR"></param>
+            <param name="thetaD"></param>
+            <param name="omega"></param>
+            <param name="alpha"></param>
+            <param name="vT"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestRotaionalMotion3(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="omega"></param>
+            <param name="aRadius"></param>
+            <param name="bRadius"></param>
+            <param name="vTa"></param>
+            <param name="vTb"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateNetForce(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="gX"></param>
+            <param name="gY"></param>
+            <param name="mass"></param>
+            <param name="force"></param>
+            <param name="forceAngle"></param>
+            <param name="mu"></param>
+            <param name="inclineDegrees"></param>
+            <param name="netFx"></param>
+            <param name="netFy"></param>
+            <param name="aX"></param>
+            <param name="aY"></param>
+            <param name="t"></param>
+            <param name="vFx"></param>
+            <param name="vFy"></param>
+            <param name="dX"></param>
+            <param name="dY"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateGravitationalForce(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="mass1"></param>
+            <param name="mass2"></param>
+            <param name="centersDistance"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateGravity(System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="mass"></param>
+            <param name="radius"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateSpringConstant(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="stretchedLength"></param>
+            <param name="mass"></param>
+            <param name="gravity"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateSpringFreqVelocity(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="k"></param>
+            <param name="mass"></param>
+            <param name="stretchedLength"></param>
+            <param name="expectedFreq"></param>
+            <param name="expectedVelocity"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateMomentum(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="vI"></param>
+            <param name="mass"></param>
+            <param name="brakingForce"></param>
+            <param name="p"></param>
+            <param name="t"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCircleCollision(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="aX"></param>
+            <param name="aY"></param>
+            <param name="aR"></param>
+            <param name="aMass"></param>
+            <param name="aViX"></param>
+            <param name="aViY"></param>
+            <param name="bX"></param>
+            <param name="bY"></param>
+            <param name="bR"></param>
+            <param name="bMass"></param>
+            <param name="bViX"></param>
+            <param name="bViY"></param>
+            <param name="aVfX"></param>
+            <param name="aVfY"></param>
+            <param name="bVfX"></param>
+            <param name="bVfY"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestSphereCollision(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="aX"></param>
+            <param name="aY"></param>
+            <param name="aZ"></param>
+            <param name="aR"></param>
+            <param name="aMass"></param>
+            <param name="aViX"></param>
+            <param name="aViY"></param>
+            <param name="aViZ"></param>
+            <param name="bX"></param>
+            <param name="bY"></param>
+            <param name="bZ"></param>
+            <param name="bR"></param>
+            <param name="bMass"></param>
+            <param name="bViX"></param>
+            <param name="bViY"></param>
+            <param name="bViZ"></param>
+            <param name="aVfX"></param>
+            <param name="aVfY"></param>
+            <param name="aVfZ"></param>
+            <param name="bVfX"></param>
+            <param name="bVfY"></param>
+            <param name="bVfZ"></param>
+        </member>
     </members>
 </doc>

@@ -293,6 +293,51 @@
             This class represents a 2D vector with magnitude@direction
             </summary>
         </member>
+        <member name="P:Engine.Classes.Eng_PolarVector.magnitude">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_PolarVector.direction">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_PolarVector.xComponent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_PolarVector.yComponent">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_PolarVector.Radians">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_PolarVector.#ctor">
+            <summary>
+            Empty PolarVector Constructor
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_PolarVector.#ctor(System.Double,System.Double,System.Double)">
+            <summary>
+            greedy constructor that takes X and Y axis and Direction
+            </summary>
+            <param name="X"></param>
+            <param name="Y"></param>
+            <param name="Direction"></param>
+        </member>
+        <member name="M:Engine.Classes.Eng_PolarVector.#ctor(System.Double,System.Double)">
+            <summary>
+            Greedy Constructors that takes magnitude and direction
+            </summary>
+            <param name="Magnitude"></param>
+            <param name="direction"></param>
+        </member>
         <member name="T:Engine.Classes.Eng_Quaternion">
             <summary>
             This class represents a Quaternion using z-axis heading
@@ -696,6 +741,17 @@
             quaternion to euler
             </summary>
             <param name="q"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.VelocityFinalAndDisplacementXnY(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Returns two 2D points velocity and displacement (Velocity X and Y, Displacement X and Y)
+            </summary>
+            <param name="AccelarationX"></param>
+            <param name="AccelarationY"></param>
+            <param name="time"></param>
+            <param name="VelocityInitialX"></param>
+            <param name="VelocityInitialY"></param>
             <returns></returns>
         </member>
         <member name="T:Engine.Validator">
