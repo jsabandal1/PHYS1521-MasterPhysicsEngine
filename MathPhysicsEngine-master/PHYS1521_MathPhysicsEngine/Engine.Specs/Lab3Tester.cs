@@ -30,7 +30,7 @@ namespace Engine.Specs
         // Instructor Data
         [InlineData(3, -2, 0, -9.81, 2.5, 3, -26.525, 7.5, -5)]
         // Student Data
-        [InlineData(10, 5, 0, -9.81, 1.53, 10, -10, 15.3, -3.82)]
+        [InlineData(10, 5, 0, -9.81, 1.53, 10, -10.009300000000001, 15.3, -3.83)]
         public static void TestCalculateVelcityDisplacement(
             double vIx, double vIy, double gX, double gY, double t,
             double vFx, double vFy, double dX, double dY)
@@ -41,9 +41,9 @@ namespace Engine.Specs
             Tuple<double, double, double, double> results = Calculator.VelocityFinalAndDisplacementXnY(gX, gY, t, vIx, vIy);
 
             Assert.Equal(expected.Item1, results.Item1);
-            Assert.Equal(expected.Item2, Math.Round(results.Item2,1));
+            Assert.Equal(expected.Item2, results.Item2);
             Assert.Equal(expected.Item3, results.Item3);
-            //Assert.Equal(expected.Item4, results.Item4);
+            Assert.Equal(expected.Item4, Math.Round(results.Item4,2));
 
         }
         /// <summary>

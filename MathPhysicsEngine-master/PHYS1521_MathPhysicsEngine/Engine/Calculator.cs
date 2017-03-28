@@ -491,7 +491,7 @@ namespace Engine
             double DisplacementY;
 
             DisplacementX = VelocityInitialX * time + (1 / 2 * AccelarationX * (Math.Pow(time, 2)));
-            DisplacementY = VelocityInitialY * time + (1 / 2 * (AccelarationY* -1) * (Math.Pow(time, 2)));
+            DisplacementY = VelocityInitialY * time + 0.5 * AccelarationY * (Math.Pow(time, 2));
 
             // vf =vi+a*t
             VelocityFinalX = VelocityInitialX + AccelarationX * time;
