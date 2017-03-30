@@ -30,7 +30,7 @@ namespace Engine.Specs
         // Instructor Data
         [InlineData(3, -2, 0, -9.81, 2.5, 3, -26.525, 7.5, -5)]
         // Student Data
-        [InlineData(10, 5, 0, -9.81, 1.53, 10, -10.009300000000001, 15.3, -3.83)]
+        [InlineData(10, 5, 0, -9.81, 1.53, 10.0000, -10.0093, 15.3, 7.65)]
         public static void TestCalculateVelcityDisplacement(
             double vIx, double vIy, double gX, double gY, double t,
             double vFx, double vFy, double dX, double dY)
@@ -41,9 +41,9 @@ namespace Engine.Specs
             Tuple<double, double, double, double> results = Calculator.VelocityFinalAndDisplacementXnY(gX, gY, t, vIx, vIy);
 
             Assert.Equal(expected.Item1, results.Item1);
-            Assert.Equal(expected.Item2, results.Item2);
+            Assert.Equal(expected.Item2, Math.Round(results.Item2, 4));
             Assert.Equal(expected.Item3, results.Item3);
-            Assert.Equal(expected.Item4, Math.Round(results.Item4,2));
+            Assert.Equal(expected.Item4, Math.Round(results.Item4, 2));
 
         }
         /// <summary>
@@ -56,6 +56,7 @@ namespace Engine.Specs
         /// <param name="distance"></param>
         /// <param name="maxHeight"></param>
         /// <param name="t"></param>
+        
         [Theory]
         // Instructor Data
         [InlineData(2.5, 5, 15, -9.81, 4.4109, 15.0024, 1.7711)]
@@ -65,10 +66,12 @@ namespace Engine.Specs
             double vI, double degrees, double h, double g,
             double distance, double maxHeight, double t)
         {
-            // Arrange - get data to do the test
-            
+            // Arrange - get data to do the test displacementX, maxHeight, ActualTime)
+            Tuple<double, double, double> results = Calculator.DisplacementXnMaxHeightnTime(g, degrees, vI, h);
             // Act - performing the action
-            
+            //Assert.Equal(distance, results.Item1);
+            //Assert.Equal(maxHeight, results.Item2);
+            //Assert.Equal(t, results.Item3);
             // Assert - did we get back the correct answers
            
         }
@@ -88,9 +91,12 @@ namespace Engine.Specs
         // Student Data
 
         public void TestRotationalMotion1(
-            double rpm, double radius, double omega, double aT_Expected)
+            double rpm, double radius, double omega /*rotational speed*/, double aT_Expected)
         {
+            Tuple<double, double> results = Calculator.RadPerSecAndAcceleration(rpm, radius);
             // Arrange - get data to do the test
+            Assert.Equal(omega, Math.Round(results.Item1, 4));
+            Assert.Equal(aT_Expected, Math.Round(results.Item2, 4));
 
             // Act - performing the action
            
@@ -115,12 +121,17 @@ namespace Engine.Specs
             double arc, double radius, double t,
             double thetaR, double thetaD, double omega, double alpha, double vT)
         {
-            // Arrange - get data to do the test
-
+            // Arrange - get data to do the test .(theta,omega, alpha, vt)
+            Tuple<double,double, double, double> results = Calculator.ChangeInThetaAngularVelocityAndAccelerationAndTangentialVelocity(arc, radius, t);
             // Act - performing the action
-           
+            double newThetaR = results.Item1;
+            double newThetaD = Calculator.RadiansToDegree(newThetaR);
             // Assert - did we get back the correct answers
-            
+            Assert.Equal(thetaR, newThetaR);
+            Assert.Equal(thetaD, Math.Round(newThetaD,4));
+            Assert.Equal(omega, results.Item2);
+            Assert.Equal(alpha, Math.Round(results.Item3,4));
+            Assert.Equal(vT, results.Item4);
         }
         /// <summary>
         /// 
@@ -134,14 +145,17 @@ namespace Engine.Specs
         // Instructor Data
         [InlineData(0.5, 0.25, 0.35, 0.125, 0.175)]
         // Student Data
+        [InlineData(0.65, 0.15, 0.05, 0.0975, 0.0325)]
         public static void TestRotaionalMotion3(
             double omega, double aRadius, double bRadius,
             double vTa, double vTb)
         {
             // Arrange - get data to do the test
+            Tuple<double, double> results = Calculator.TangentialVelocityOfTwoObjects(omega, aRadius, bRadius);
 
             // Act - performing the action
-           
+            Assert.Equal(vTa, results.Item1);
+            Assert.Equal(vTb, results.Item2);
             // Assert - did we get back the correct answers
             
         }
@@ -206,9 +220,9 @@ namespace Engine.Specs
             double expected)
         {
             // Arrange - get data to do the test
-
+            double result =Calculator.ForceAttractionOfTwoObjects(mass1, mass2, centersDistance);
             // Act - performing the action
-           
+            Assert.Equal(expected, result);
             // Assert - did we get back the correct answer
             
         }
@@ -226,9 +240,9 @@ namespace Engine.Specs
         public static void TestCalculateGravity(double mass, double radius, double expected)
         {
             // Arrange - get data to do the test
-
+            double result = Calculator.surfaceGravityOfCelestialBody(mass, radius);
             // Act - performing the action
-
+            Assert.Equal(expected, result);
             // Assert - did we get back the correct answer
            
         }
@@ -251,9 +265,10 @@ namespace Engine.Specs
             double stretchedLength, double mass, double gravity, double expected)
         {
             // Arrange - get data to do the test
+            double result = Calculator.CalculateSpringConstant(mass, stretchedLength, gravity);
 
             // Act - performing the action
-           
+            Assert.Equal(expected,Math.Round(result,3));
             // Assert - did we get back the correct answer
             
         }
@@ -274,11 +289,12 @@ namespace Engine.Specs
             double k, double mass, double stretchedLength, double expectedFreq, double expectedVelocity)
         {
             // Arrange - get data to do the test
-
+            Tuple<double, double> results = Calculator.SpringFreqAndVelocity(k, mass, stretchedLength);
             // Act - performing the action
-           
+            Assert.Equal(expectedFreq, Math.Round(results.Item1,4));
+            Assert.Equal(expectedVelocity, Math.Round(results.Item2,4));
             // Assert - did we get back the correct answers
-            
+
         }
         #endregion
 

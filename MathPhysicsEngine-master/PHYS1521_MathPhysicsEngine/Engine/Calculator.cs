@@ -12,6 +12,7 @@ namespace Engine
     /// </summary>
     public class Calculator
     {
+        public const double G = 6.673e-11;
         /// <summary>
         /// Calculates the length of a line segment between two 2D points.
         /// </summary>
@@ -490,16 +491,83 @@ namespace Engine
             double DisplacementX;
             double DisplacementY;
 
-            DisplacementX = VelocityInitialX * time + (1 / 2 * AccelarationX * (Math.Pow(time, 2)));
-            DisplacementY = VelocityInitialY * time + 0.5 * AccelarationY * (Math.Pow(time, 2));
+            DisplacementX = VelocityInitialX * time + 1 / 2 * AccelarationX * (Math.Pow(time, 2));
+            DisplacementY = VelocityInitialY * time + 1 / 2 * -AccelarationY * Math.Pow(time, 2);
 
             // vf =vi+a*t
-            VelocityFinalX = VelocityInitialX + AccelarationX * time;
-            VelocityFinalY = VelocityInitialY + AccelarationY * time;
+            VelocityFinalX = VelocityInitialX + (AccelarationX * time);
+            VelocityFinalY = VelocityInitialY + (AccelarationY * time);
 
             return new Tuple<double, double, double, double>(VelocityFinalX, VelocityFinalY, DisplacementX, DisplacementY);
         }
 
+
+        public static Tuple<double, double, double> DisplacementXnMaxHeightnTime(double gravity, double LaunchAngle, double VelocityAtAngle, double PlatformHeight)
+        {
+            double Viy = Math.Sin(LaunchAngle) * VelocityAtAngle;
+            double Vix = Math.Cos(LaunchAngle) * VelocityAtAngle;
+
+            double ActualTime;
+
+            double Time1 = (-Viy + (Math.Sqrt(Math.Pow(Viy, 2) - (2 * gravity * (-PlatformHeight))))) / gravity;
+            double Time2 = (-Viy - (Math.Sqrt(Math.Pow(Viy, 2) - (2 * gravity * (-PlatformHeight))))) / gravity;
+
+
+
+            //the horizontal displacement of a projectile, its max height, and time
+            double displacementX = Vix * Time1 + 0.5 * 0 * Math.Pow(Time1, 2);
+
+            double maxHeight = -(Math.Pow(Viy, 2)) / 2 * gravity;
+
+            return new Tuple<double, double, double>(displacementX, maxHeight, Time1);
+        }
+
+        public static Tuple<double, double> RadPerSecAndAcceleration(double RPM, double radius)
+        {
+            double RotationalSpeed = RPM * 1 / 60 * 2 * Math.PI;
+            double AngularAcceleration = radius * Math.Pow(RotationalSpeed, 2);
+            return new Tuple<double, double>(RotationalSpeed, AngularAcceleration);
+        }
+            
+        public static Tuple<double, double, double, double> ChangeInThetaAngularVelocityAndAccelerationAndTangentialVelocity(double ArcLength, double RadiusOfRotation, double Time)
+        {
+            double changeTheta = ArcLength / RadiusOfRotation;
+            double angularVelocity = changeTheta / Time;
+            double angularAcceleration = angularVelocity / Time;
+            double tangentialVelocity = RadiusOfRotation * angularVelocity;
+
+            return new Tuple<double, double, double, double>(changeTheta, angularVelocity, angularAcceleration, tangentialVelocity);
+        }
+        public static Tuple<double, double> TangentialVelocityOfTwoObjects(double angularVelocity, double Radius1, double Radius2)
+        {
+            double object1 = Radius1 * angularVelocity;
+            double object2 = Radius2 * angularVelocity;
+
+            return new Tuple<double, double>(object1, object2);
+        }
+        //public static Tuple<double,double> CalculateNetForceAndAcceleration(double AppliedForce, double ForceOfFriction, double ForceOfGravity)
+        //{ }
+        public static double surfaceGravityOfCelestialBody(double Mass, double Radius)
+        {
+            //cause gravity pulls down so negative
+            return -(G * Mass / (Radius * Radius));
+        }
+        public static double ForceAttractionOfTwoObjects(double Mass1, double Mass2, double Radius)
+        {
+            return G * Mass1 * Mass2 / (Radius * Radius);
+        }
+        public static double CalculateSpringConstant(double mass, double stretch, double Gravity)
+        {
+            return -mass * Gravity / stretch;
+        }
+        public static Tuple<double,double> SpringFreqAndVelocity(double k, double mass, double stretchedLength)
+        {
+            // 𝜔 = √k ---- Frequency = ( 1 / 2 * Math.PI ) * (Math.Sqrt(k / m); ----- velocity = stretchLength * Math.Sqrt(K / mass);
+            double Frequency = (1 / (2 * Math.PI)) * (Math.Sqrt(k / mass));
+            double Velocity = stretchedLength * Math.Sqrt(k / mass);
+
+            return new Tuple<double, double>(Frequency, Velocity);
+        }
         #endregion
     }
 }
