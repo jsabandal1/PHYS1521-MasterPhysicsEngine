@@ -12,6 +12,9 @@ namespace Engine
     /// </summary>
     public class Calculator
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public const double G = 6.673e-11;
         /// <summary>
         /// Calculates the length of a line segment between two 2D points.
@@ -501,34 +504,50 @@ namespace Engine
             return new Tuple<double, double, double, double>(VelocityFinalX, VelocityFinalY, DisplacementX, DisplacementY);
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="gravity"></param>
+        /// <param name="LaunchAngle"></param>
+        /// <param name="VelocityAtAngle"></param>
+        /// <param name="PlatformHeight"></param>
+        /// <returns></returns>
         public static Tuple<double, double, double> DisplacementXnMaxHeightnTime(double gravity, double LaunchAngle, double VelocityAtAngle, double PlatformHeight)
         {
             double Viy = Math.Sin(LaunchAngle) * VelocityAtAngle;
             double Vix = Math.Cos(LaunchAngle) * VelocityAtAngle;
 
-            double ActualTime;
-
-            double Time1 = (-Viy + (Math.Sqrt(Math.Pow(Viy, 2) - (2 * gravity * (-PlatformHeight))))) / gravity;
-            double Time2 = (-Viy - (Math.Sqrt(Math.Pow(Viy, 2) - (2 * gravity * (-PlatformHeight))))) / gravity;
-
-
+            double Time1 = (-Viy - (Math.Sqrt((Math.Pow(Viy, 2) - (4 * gravity * PlatformHeight))))) / (2 * gravity);
 
             //the horizontal displacement of a projectile, its max height, and time
             double displacementX = Vix * Time1 + 0.5 * 0 * Math.Pow(Time1, 2);
+            double apex = -Viy / gravity;
+            double maxHeight = apex * Viy + (0.5 * gravity) * (Math.Pow(apex,2));
 
-            double maxHeight = -(Math.Pow(Viy, 2)) / 2 * gravity;
 
             return new Tuple<double, double, double>(displacementX, maxHeight, Time1);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="RPM"></param>
+        /// <param name="radius"></param>
+        /// <returns></returns>
         public static Tuple<double, double> RadPerSecAndAcceleration(double RPM, double radius)
         {
             double RotationalSpeed = RPM * 1 / 60 * 2 * Math.PI;
             double AngularAcceleration = radius * Math.Pow(RotationalSpeed, 2);
             return new Tuple<double, double>(RotationalSpeed, AngularAcceleration);
         }
-            
+       
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="ArcLength"></param>
+        /// <param name="RadiusOfRotation"></param>
+        /// <param name="Time"></param>
+        /// <returns></returns>
         public static Tuple<double, double, double, double> ChangeInThetaAngularVelocityAndAccelerationAndTangentialVelocity(double ArcLength, double RadiusOfRotation, double Time)
         {
             double changeTheta = ArcLength / RadiusOfRotation;
@@ -538,6 +557,14 @@ namespace Engine
 
             return new Tuple<double, double, double, double>(changeTheta, angularVelocity, angularAcceleration, tangentialVelocity);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="angularVelocity"></param>
+        /// <param name="Radius1"></param>
+        /// <param name="Radius2"></param>
+        /// <returns></returns>
         public static Tuple<double, double> TangentialVelocityOfTwoObjects(double angularVelocity, double Radius1, double Radius2)
         {
             double object1 = Radius1 * angularVelocity;
@@ -545,21 +572,54 @@ namespace Engine
 
             return new Tuple<double, double>(object1, object2);
         }
+
+
         //public static Tuple<double,double> CalculateNetForceAndAcceleration(double AppliedForce, double ForceOfFriction, double ForceOfGravity)
         //{ }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Mass"></param>
+        /// <param name="Radius"></param>
+        /// <returns></returns>
         public static double surfaceGravityOfCelestialBody(double Mass, double Radius)
         {
             //cause gravity pulls down so negative
             return -(G * Mass / (Radius * Radius));
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Mass1"></param>
+        /// <param name="Mass2"></param>
+        /// <param name="Radius"></param>
+        /// <returns></returns>
         public static double ForceAttractionOfTwoObjects(double Mass1, double Mass2, double Radius)
         {
             return G * Mass1 * Mass2 / (Radius * Radius);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mass"></param>
+        /// <param name="stretch"></param>
+        /// <param name="Gravity"></param>
+        /// <returns></returns>
         public static double CalculateSpringConstant(double mass, double stretch, double Gravity)
         {
             return -mass * Gravity / stretch;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="k"></param>
+        /// <param name="mass"></param>
+        /// <param name="stretchedLength"></param>
+        /// <returns></returns>
         public static Tuple<double,double> SpringFreqAndVelocity(double k, double mass, double stretchedLength)
         {
             // 𝜔 = √k ---- Frequency = ( 1 / 2 * Math.PI ) * (Math.Sqrt(k / m); ----- velocity = stretchLength * Math.Sqrt(K / mass);
@@ -567,6 +627,109 @@ namespace Engine
             double Velocity = stretchedLength * Math.Sqrt(k / mass);
 
             return new Tuple<double, double>(Frequency, Velocity);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="mass"></param>
+        /// <param name="Vi"></param>
+        /// <param name="breakForce"></param>
+        /// <returns></returns>
+        public static Tuple<double, double> CalculateTimeAndMomentum(double mass, double Vi, double breakForce)
+        {
+            double momentum = mass * Vi,
+
+            time = momentum / breakForce;
+
+            return new Tuple<double, double>(momentum, time);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aX"></param>
+        /// <param name="aY"></param>
+        /// <param name="aR"></param>
+        /// <param name="aMass"></param>
+        /// <param name="aViX"></param>
+        /// <param name="aViY"></param>
+        /// <param name="bX"></param>
+        /// <param name="bY"></param>
+        /// <param name="bR"></param>
+        /// <param name="bMass"></param>
+        /// <param name="bViX"></param>
+        /// <param name="bViY"></param>
+        /// <returns></returns>
+        public static Tuple<Eng_Vector2D, Eng_Vector2D> FinalVelocityOfTwoCircleCollisions(double aX, double aY, double aR, double aMass, double aViX, double aViY,
+            double bX, double bY, double bR, double bMass, double bViX, double bViY)
+        {
+            Eng_Vector2D CircleA = new Eng_Vector2D(aViX, aViY);
+            Eng_Vector2D CircleB = new Eng_Vector2D(bViX, bViY);
+
+            Eng_Vector2D CenterAB = new Eng_Vector2D(aX - bX, aY - bY);
+
+            double VectorCircle = Math.Sqrt((Math.Pow(CenterAB.x,2) + (Math.Pow(CenterAB.y,2))));
+
+            Eng_Vector2D N = new Eng_Vector2D(CenterAB.x / VectorCircle, CenterAB.y / VectorCircle);
+            
+            double a1 = DotProductofTwo2DVectors(CircleA, N);
+            double a2 = DotProductofTwo2DVectors(CircleB, N);
+
+            double optimized = (2 * (a1 - a2)) / (aMass + bMass);
+
+            //𝑉𝐴𝑓 = 𝑉𝐴𝑖 − (𝑜𝑝𝑡𝑖𝑚𝑖𝑧𝑒𝑑 × 𝑚𝐵) × N
+            Eng_Vector2D VAf = new Eng_Vector2D(aViX - (optimized * bMass) * N.x, aViY - (optimized * bMass) * N.y);
+            Eng_Vector2D VBf = new Eng_Vector2D(bViX + (optimized * aMass) * N.x, bViY + (optimized * aMass) * N.y);
+
+            return new Tuple<Eng_Vector2D, Eng_Vector2D>(VAf, VBf);
+
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="aX"></param>
+        /// <param name="aY"></param>
+        /// <param name="aZ"></param>
+        /// <param name="aR"></param>
+        /// <param name="aMass"></param>
+        /// <param name="aViX"></param>
+        /// <param name="aViY"></param>
+        /// <param name="aViZ"></param>
+        /// <param name="bX"></param>
+        /// <param name="bY"></param>
+        /// <param name="bZ"></param>
+        /// <param name="bR"></param>
+        /// <param name="bMass"></param>
+        /// <param name="bViX"></param>
+        /// <param name="bViY"></param>
+        /// <param name="bViZ"></param>
+        /// <returns></returns>
+        public static Tuple<Eng_Vector3D, Eng_Vector3D> FinalVelocityOfTwoSphereCollisions(double aX, double aY, double aZ, double aR, double aMass, double aViX, double aViY, double aViZ,
+            double bX, double bY, double bZ, double bR, double bMass, double bViX, double bViY, double bViZ)
+        {
+            Eng_Vector3D CircleA = new Eng_Vector3D(aViX, aViY, aViZ);
+            Eng_Vector3D CircleB = new Eng_Vector3D(bViX, bViY, bViZ);
+
+            Eng_Vector3D CenterAB = new Eng_Vector3D(aX - bX, aY - bY, aZ - bZ);
+
+            double VectorCircle = Math.Sqrt((Math.Pow(CenterAB.x, 2) + (Math.Pow(CenterAB.y, 2)) + (Math.Pow(CenterAB.z, 2))));
+
+            Eng_Vector3D N = new Eng_Vector3D(CenterAB.x / VectorCircle, CenterAB.y / VectorCircle, CenterAB.z / VectorCircle);
+
+            double a1 = DotProductofTwo3DVectors(CircleA, N);
+            double a2 = DotProductofTwo3DVectors(CircleB, N);
+
+            double optimized = (2 * (a1 - a2)) / (aMass + bMass);
+
+            //𝑉𝐴𝑓 = 𝑉𝐴𝑖 − (𝑜𝑝𝑡𝑖𝑚𝑖𝑧𝑒𝑑 × 𝑚𝐵) × N
+            Eng_Vector3D VAf = new Eng_Vector3D(aViX - (optimized * bMass) * N.x, aViY - (optimized * bMass) * N.y, aViZ - (optimized * bMass) * N.z);
+
+            Eng_Vector3D VBf = new Eng_Vector3D(bViX + (optimized * aMass) * N.x, bViY + (optimized * aMass) * N.y, bViZ + (optimized * aMass) * N.z);
+
+            return new Tuple<Eng_Vector3D, Eng_Vector3D>(VAf, VBf);
+
         }
         #endregion
     }

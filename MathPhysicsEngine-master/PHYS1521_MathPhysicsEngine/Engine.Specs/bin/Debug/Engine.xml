@@ -9,6 +9,74 @@
             This class represents a Circle for mathematical calculations.
             </summary>
         </member>
+        <member name="P:Engine.Classes.Eng_Circle.x">
+            <summary>
+            x coordinate of the circle
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Circle.y">
+            <summary>
+            y coordinate of the circle
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Circle.radius">
+            <summary>
+            radius of the circle
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Circle.mass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Circle.Vix">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Circle.Viy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Circle.#ctor(System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="radius"></param>
+        </member>
+        <member name="M:Engine.Classes.Eng_Circle.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="radius"></param>
+            <param name="mass"></param>
+        </member>
+        <member name="M:Engine.Classes.Eng_Circle.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="radius"></param>
+            <param name="Vix"></param>
+            <param name="Viy"></param>
+        </member>
+        <member name="M:Engine.Classes.Eng_Circle.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="radius"></param>
+            <param name="Vix"></param>
+            <param name="Viy"></param>
+            <param name="mass"></param>
+        </member>
         <member name="T:Engine.Classes.Eng_Matrix2x2">
             <summary>
             This class represents a 2x2  matrix
@@ -420,6 +488,88 @@
             This class represents a Sphere for mathematical calculations.
             </summary>
         </member>
+        <member name="P:Engine.Classes.Eng_Sphere.x">
+            <summary>
+            x coordinate of the circle
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Sphere.y">
+            <summary>
+            y coordinate of the circle
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Sphere.z">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Sphere.radius">
+            <summary>
+            radius of the circle
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Sphere.mass">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Sphere.Vix">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Sphere.Viy">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Engine.Classes.Eng_Sphere.Viz">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Engine.Classes.Eng_Sphere.#ctor(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="z"></param>
+            <param name="radius"></param>
+        </member>
+        <member name="M:Engine.Classes.Eng_Sphere.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="z"></param>
+            <param name="radius"></param>
+            <param name="mass"></param>
+        </member>
+        <member name="M:Engine.Classes.Eng_Sphere.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="z"></param>
+            <param name="radius"></param>
+            <param name="Vix"></param>
+            <param name="Viy"></param>
+        </member>
+        <member name="M:Engine.Classes.Eng_Sphere.#ctor(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <param name="z"></param>
+            <param name="radius"></param>
+            <param name="Vix"></param>
+            <param name="Viy"></param>
+            <param name="mass"></param>
+        </member>
         <member name="T:Engine.Classes.Eng_Vector2D">
             <summary>
             This class represents a 2D Vector in component form
@@ -527,6 +677,11 @@
         <member name="T:Engine.Calculator">
             <summary>
             This class contains static methods to perform the math calculations.
+            </summary>
+        </member>
+        <member name="F:Engine.Calculator.G">
+            <summary>
+            
             </summary>
         </member>
         <member name="M:Engine.Calculator.SegmentLength(Engine.Classes.Eng_Point2D,Engine.Classes.Eng_Point2D)">
@@ -752,6 +907,126 @@
             <param name="time"></param>
             <param name="VelocityInitialX"></param>
             <param name="VelocityInitialY"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.DisplacementXnMaxHeightnTime(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="gravity"></param>
+            <param name="LaunchAngle"></param>
+            <param name="VelocityAtAngle"></param>
+            <param name="PlatformHeight"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.RadPerSecAndAcceleration(System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="RPM"></param>
+            <param name="radius"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.ChangeInThetaAngularVelocityAndAccelerationAndTangentialVelocity(System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="ArcLength"></param>
+            <param name="RadiusOfRotation"></param>
+            <param name="Time"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.TangentialVelocityOfTwoObjects(System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="angularVelocity"></param>
+            <param name="Radius1"></param>
+            <param name="Radius2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.surfaceGravityOfCelestialBody(System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="Mass"></param>
+            <param name="Radius"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.ForceAttractionOfTwoObjects(System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="Mass1"></param>
+            <param name="Mass2"></param>
+            <param name="Radius"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.CalculateSpringConstant(System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="mass"></param>
+            <param name="stretch"></param>
+            <param name="Gravity"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.SpringFreqAndVelocity(System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="k"></param>
+            <param name="mass"></param>
+            <param name="stretchedLength"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.CalculateTimeAndMomentum(System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="mass"></param>
+            <param name="Vi"></param>
+            <param name="breakForce"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.FinalVelocityOfTwoCircleCollisions(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="aX"></param>
+            <param name="aY"></param>
+            <param name="aR"></param>
+            <param name="aMass"></param>
+            <param name="aViX"></param>
+            <param name="aViY"></param>
+            <param name="bX"></param>
+            <param name="bY"></param>
+            <param name="bR"></param>
+            <param name="bMass"></param>
+            <param name="bViX"></param>
+            <param name="bViY"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Calculator.FinalVelocityOfTwoSphereCollisions(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="aX"></param>
+            <param name="aY"></param>
+            <param name="aZ"></param>
+            <param name="aR"></param>
+            <param name="aMass"></param>
+            <param name="aViX"></param>
+            <param name="aViY"></param>
+            <param name="aViZ"></param>
+            <param name="bX"></param>
+            <param name="bY"></param>
+            <param name="bZ"></param>
+            <param name="bR"></param>
+            <param name="bMass"></param>
+            <param name="bViX"></param>
+            <param name="bViY"></param>
+            <param name="bViZ"></param>
             <returns></returns>
         </member>
         <member name="T:Engine.Validator">

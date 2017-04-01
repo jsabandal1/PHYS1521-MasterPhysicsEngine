@@ -431,7 +431,28 @@
             <param name="vTa"></param>
             <param name="vTb"></param>
         </member>
-        <member name="M:Engine.Specs.Lab3Tester.TestCalculateNetForce(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateNetForceNonIncline(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="gX"></param>
+            <param name="gY"></param>
+            <param name="mass"></param>
+            <param name="force"></param>
+            <param name="forceAngle"></param>
+            <param name="mu"></param>
+            <param name="inclineDegrees"></param>
+            <param name="netFx"></param>
+            <param name="netFy"></param>
+            <param name="aX"></param>
+            <param name="aY"></param>
+            <param name="t"></param>
+            <param name="vFx"></param>
+            <param name="vFy"></param>
+            <param name="dX"></param>
+            <param name="dY"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateNetForceIncline(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
             <summary>
             
             </summary>
