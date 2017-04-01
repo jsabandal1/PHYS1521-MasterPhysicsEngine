@@ -33,14 +33,539 @@
             </summary>
             <returns>A List of Objects</returns>
         </member>
-        <member name="M:Engine.Specs.EngineTester.TestMidPoint(Engine.Classes.Eng_Point2D,Engine.Classes.Eng_Point2D,Engine.Classes.Eng_Point2D)">
+        <member name="T:Engine.Specs.Lab1Tester">
             <summary>
-            This test test the calcualtion of the midpoint, as a Eng_Point2D type, between
-            two Eng_Point2D points. The test data for this test comes from "MidPointData".
+            Test Calculator
             </summary>
-            <param name="givenA">Eng_Point2D: test point A</param>
-            <param name="givenB">Eng_Point2D: test point B</param>
-            <param name="expected">Expected, calculated, midpoint, a Eng_Point2D point, between test points A and B</param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCalculateAdjacentOpposite(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Test Data for Adjacent opposite looking for angle and hypotenuse
+            </summary>
+            <param name="degrees"></param>
+            <param name="hypotenuse"></param>
+            <param name="adjacent"></param>
+            <param name="opposite"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCalculateAdjacentHypotenuse(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Test for solving the adjacent and hypotenuse
+            </summary>
+            <param name="degrees"></param>
+            <param name="opposite"></param>
+            <param name="adjacent"></param>
+            <param name="hypotenuse"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCalculateOppositeHypotenuse(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Test the calculation for the opposite and hypotenuse
+            </summary>
+            <param name="degrees"></param>
+            <param name="adjacent"></param>
+            <param name="opposite"></param>
+            <param name="hypotenuse"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCalculateHypotenuseTheta(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            test for calculating the hypotenuse and angle
+            </summary>
+            <param name="adjacent"></param>
+            <param name="opposite"></param>
+            <param name="hypotenuse"></param>
+            <param name="degrees"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCalculateAdjacentTheta(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            test for Calculating the adjacent and angle theta
+            </summary>
+            <param name="opposite"></param>
+            <param name="hypotenuse"></param>
+            <param name="adjacent"></param>
+            <param name="degrees"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCalculateOppositeTheta(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Test for the calculation of opposite and theta
+            </summary>
+            <param name="adjacent"></param>
+            <param name="hypotenuse"></param>
+            <param name="opposite"></param>
+            <param name="degrees"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.AddVector2DData">
+            <summary>
+            test data for adding two 2D vector
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.NormalizeVector2DData">
+            <summary>
+            test data for normalizing 2D vector
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestAddVector(Engine.Classes.Eng_Vector2D,Engine.Classes.Eng_Vector2D,Engine.Classes.Eng_Vector2D)">
+            <summary>
+            test for adding two vectors
+            </summary>
+            <param name="givenA"></param>
+            <param name="givenB"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestNormailze(Engine.Classes.Eng_Vector2D,Engine.Classes.Eng_Vector2D)">
+            <summary>
+            test for normalize two vectors
+            </summary>
+            <param name="givenA"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestDotProduct(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            test for solving dot product of two 2D vectors
+            </summary>
+            <param name="givenAx"></param>
+            <param name="givenAy"></param>
+            <param name="givenBx"></param>
+            <param name="givenBy"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestAngleBetweenVectors(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Test for calculating the angle between two 2D vectors
+            </summary>
+            <param name="givenAx"></param>
+            <param name="givenAy"></param>
+            <param name="givenBx"></param>
+            <param name="givenBy"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.AddVector3DData">
+            <summary>
+            test data for adding two 3d vectors
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.NormalizeVector3DData">
+            <summary>
+            test data for normalize 3d vector
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.CrossProductData">
+            <summary>
+            test data for cross product of 3d vectors
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.SurfaceNormalData">
+            <summary>
+            surface normal 3d data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestAddVector(Engine.Classes.Eng_Vector3D,Engine.Classes.Eng_Vector3D,Engine.Classes.Eng_Vector3D)">
+            <summary>
+            test calculation for adding 3d vector
+            </summary>
+            <param name="givenA"></param>
+            <param name="givenB"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestNormailze(Engine.Classes.Eng_Vector3D,Engine.Classes.Eng_Vector3D)">
+            <summary>
+            test calculation for testnormalize 3d vector
+            </summary>
+            <param name="givenA"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestDotProduct3D(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            test calculation for dot product of two 3D vectors
+            </summary>
+            <param name="givenAx"></param>
+            <param name="givenAy"></param>
+            <param name="givenAz"></param>
+            <param name="givenBx"></param>
+            <param name="givenBy"></param>
+            <param name="givenBz"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestAngleBetweenVectors3D(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            testing for the calculations of the angle between two 3D vectors
+            </summary>
+            <param name="givenAx"></param>
+            <param name="givenAy"></param>
+            <param name="givenAz"></param>
+            <param name="givenBx"></param>
+            <param name="givenBy"></param>
+            <param name="givenBz"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestCrossProduct(Engine.Classes.Eng_Vector3D,Engine.Classes.Eng_Vector3D,Engine.Classes.Eng_Vector3D)">
+            <summary>
+            test calculation for crossproduct between two 3d vectors
+            </summary>
+            <param name="givenA"></param>
+            <param name="givenB"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab1Tester.TestSurfaceNormal(Engine.Classes.Eng_Vector3D,Engine.Classes.Eng_Vector3D,Engine.Classes.Eng_Vector3D)">
+            <summary>
+            test calculation for testing the surface normal between two 3D vectors
+            </summary>
+            <param name="givenA"></param>
+            <param name="givenB"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="T:Engine.Specs.Lab2Tester">
+            <summary>
+            Test Class for lab 2
+            </summary>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.MatrixMultiplicationData">
+            <summary>
+            4x4 matrix multiplication data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.MatrixVectorMultiplicationData">
+            <summary>
+            test data for MatrixVectorMultiplication
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TransposeMatrixData">
+            <summary>
+            transpose matrix data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.InverseMatrixData">
+            <summary>
+            inverse matrix data
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestMultiplyMatrices4(Engine.Classes.Eng_Matrix4x4,Engine.Classes.Eng_Matrix4x4,Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            multiply 2 4x4 matrix
+            </summary>
+            <param name="givenA"></param>
+            <param name="givenB"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestMultiplyVector4ByMatrix(Engine.Classes.Eng_Matrix4x4,Engine.Classes.Eng_Vector4D,Engine.Classes.Eng_Vector4D)">
+            <summary>
+            multiplyvector4x4 test
+            </summary>
+            <param name="givenM"></param>
+            <param name="givenV"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestTranposeMatrix(Engine.Classes.Eng_Matrix4x4,Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            test transpose matrix
+            </summary>
+            <param name="given"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestDeterminant4(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            test determinant4x4
+            </summary>
+            <param name="m11"></param>
+            <param name="m12"></param>
+            <param name="m13"></param>
+            <param name="m14"></param>
+            <param name="m21"></param>
+            <param name="m22"></param>
+            <param name="m23"></param>
+            <param name="m24"></param>
+            <param name="m31"></param>
+            <param name="m32"></param>
+            <param name="m33"></param>
+            <param name="m34"></param>
+            <param name="m41"></param>
+            <param name="m42"></param>
+            <param name="m43"></param>
+            <param name="m44"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestInverse4(Engine.Classes.Eng_Matrix4x4,Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            test inverse 
+            </summary>
+            <param name="given"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestRotation2D(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            testrotation
+            </summary>
+            <param name="x1"></param>
+            <param name="y1"></param>
+            <param name="x2"></param>
+            <param name="y2"></param>
+            <param name="x3"></param>
+            <param name="y3"></param>
+            <param name="degrees"></param>
+            <param name="expectedx1"></param>
+            <param name="expectedy1"></param>
+            <param name="expectedx2"></param>
+            <param name="expectedy2"></param>
+            <param name="expectedx3"></param>
+            <param name="expectedy3"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.QuaternionToMatrixData">
+            <summary>
+            test quaternion to matrix
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.Rotate3DData">
+            <summary>
+            rotate 3D vector
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestQuaternion(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            test quaternion
+            </summary>
+            <param name="bank"></param>
+            <param name="attitude"></param>
+            <param name="heading"></param>
+            <param name="expectedQw"></param>
+            <param name="expectedQx"></param>
+            <param name="expectedQy"></param>
+            <param name="expectedQz"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestQuaternionToMatrix(Engine.Classes.Eng_Quaternion,Engine.Classes.Eng_Matrix4x4)">
+            <summary>
+            test quaternion to matrix
+            </summary>
+            <param name="q"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestRotate3D(Engine.Classes.Eng_Vector4D,Engine.Classes.Eng_Quaternion,Engine.Classes.Eng_Vector4D)">
+            <summary>
+            test 3d rotation
+            </summary>
+            <param name="v"></param>
+            <param name="q"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab2Tester.TestQuaterionToEuler(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="qW"></param>
+            <param name="qX"></param>
+            <param name="qY"></param>
+            <param name="qZ"></param>
+            <param name="expectedRoll"></param>
+            <param name="expectedPitch"></param>
+            <param name="expectedYaw"></param>
+        </member>
+        <member name="T:Engine.Specs.Lab3Tester">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateVelcityDisplacement(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="vIx"></param>
+            <param name="vIy"></param>
+            <param name="gX"></param>
+            <param name="gY"></param>
+            <param name="t"></param>
+            <param name="vFx"></param>
+            <param name="vFy"></param>
+            <param name="dX"></param>
+            <param name="dY"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateProjectile(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="vI"></param>
+            <param name="degrees"></param>
+            <param name="h"></param>
+            <param name="g"></param>
+            <param name="distance"></param>
+            <param name="maxHeight"></param>
+            <param name="t"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestRotationalMotion1(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="rpm"></param>
+            <param name="radius"></param>
+            <param name="omega"></param>
+            <param name="aT_Expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestRotationalMotion2(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="arc"></param>
+            <param name="radius"></param>
+            <param name="t"></param>
+            <param name="thetaR"></param>
+            <param name="thetaD"></param>
+            <param name="omega"></param>
+            <param name="alpha"></param>
+            <param name="vT"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestRotaionalMotion3(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="omega"></param>
+            <param name="aRadius"></param>
+            <param name="bRadius"></param>
+            <param name="vTa"></param>
+            <param name="vTb"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateNetForceNonIncline(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="gX"></param>
+            <param name="gY"></param>
+            <param name="mass"></param>
+            <param name="force"></param>
+            <param name="forceAngle"></param>
+            <param name="mu"></param>
+            <param name="inclineDegrees"></param>
+            <param name="netFx"></param>
+            <param name="netFy"></param>
+            <param name="aX"></param>
+            <param name="aY"></param>
+            <param name="t"></param>
+            <param name="vFx"></param>
+            <param name="vFy"></param>
+            <param name="dX"></param>
+            <param name="dY"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateNetForceIncline(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="gX"></param>
+            <param name="gY"></param>
+            <param name="mass"></param>
+            <param name="force"></param>
+            <param name="forceAngle"></param>
+            <param name="mu"></param>
+            <param name="inclineDegrees"></param>
+            <param name="netFx"></param>
+            <param name="netFy"></param>
+            <param name="aX"></param>
+            <param name="aY"></param>
+            <param name="t"></param>
+            <param name="vFx"></param>
+            <param name="vFy"></param>
+            <param name="dX"></param>
+            <param name="dY"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateGravitationalForce(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="mass1"></param>
+            <param name="mass2"></param>
+            <param name="centersDistance"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateGravity(System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="mass"></param>
+            <param name="radius"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateSpringConstant(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="stretchedLength"></param>
+            <param name="mass"></param>
+            <param name="gravity"></param>
+            <param name="expected"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateSpringFreqVelocity(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="k"></param>
+            <param name="mass"></param>
+            <param name="stretchedLength"></param>
+            <param name="expectedFreq"></param>
+            <param name="expectedVelocity"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCalculateMomentum(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="vI"></param>
+            <param name="mass"></param>
+            <param name="brakingForce"></param>
+            <param name="p"></param>
+            <param name="t"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestCircleCollision(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="aX"></param>
+            <param name="aY"></param>
+            <param name="aR"></param>
+            <param name="aMass"></param>
+            <param name="aViX"></param>
+            <param name="aViY"></param>
+            <param name="bX"></param>
+            <param name="bY"></param>
+            <param name="bR"></param>
+            <param name="bMass"></param>
+            <param name="bViX"></param>
+            <param name="bViY"></param>
+            <param name="aVfX"></param>
+            <param name="aVfY"></param>
+            <param name="bVfX"></param>
+            <param name="bVfY"></param>
+        </member>
+        <member name="M:Engine.Specs.Lab3Tester.TestSphereCollision(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            
+            </summary>
+            <param name="aX"></param>
+            <param name="aY"></param>
+            <param name="aZ"></param>
+            <param name="aR"></param>
+            <param name="aMass"></param>
+            <param name="aViX"></param>
+            <param name="aViY"></param>
+            <param name="aViZ"></param>
+            <param name="bX"></param>
+            <param name="bY"></param>
+            <param name="bZ"></param>
+            <param name="bR"></param>
+            <param name="bMass"></param>
+            <param name="bViX"></param>
+            <param name="bViY"></param>
+            <param name="bViZ"></param>
+            <param name="aVfX"></param>
+            <param name="aVfY"></param>
+            <param name="aVfZ"></param>
+            <param name="bVfX"></param>
+            <param name="bVfY"></param>
+            <param name="bVfZ"></param>
         </member>
     </members>
 </doc>
